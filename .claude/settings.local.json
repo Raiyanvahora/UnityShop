@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.ecomshift.in)",
+      "Bash(mkdir:*)",
+      "Bash(python -m http.server:*)",
+      "Bash(node --version:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(node --check:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

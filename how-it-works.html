@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how Unity Appliances works - simple steps to book repairs, buy used appliances, or sell your old ones in CITY_NAME.">
+    <title>How It Works | Unity Appliances</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header__container">
+            <a href="index.html" class="header__logo">
+                <span class="header__logo-icon">U</span>
+                Unity Appliances
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list" id="navList">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="how-it-works.html" class="nav__link active">How It Works</a></li>
+                    <li><a href="faq.html" class="nav__link">FAQ</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+                <a href="tel:PHONE_NUMBER" class="btn btn--primary btn--sm nav__cta">Call Now</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header__content">
+                <h1 class="page-header__title">How It Works</h1>
+                <div class="page-header__breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>How It Works</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Our Process</span>
+                <h2>Simple, Transparent, Hassle-Free</h2>
+                <p>Whether you need a repair, want to buy a quality used appliance, or want to sell your old one, our process is designed to be straightforward and convenient.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repair Process -->
+    <section class="section section--gray">
+        <div class="container">
+            <div class="process-section">
+                <div class="process-header fade-in">
+                    <div class="process-header__icon">&#128736;</div>
+                    <div>
+                        <h2>Book a Repair</h2>
+                        <p>Get your appliance fixed quickly with our streamlined repair process.</p>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">1</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128222;</div>
+                            <h4 class="timeline-item__title">Contact Us</h4>
+                            <p>Reach out via phone, WhatsApp, or our contact form. Describe the issue with your appliance - the brand, model, and what's going wrong.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">2</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128197;</div>
+                            <h4 class="timeline-item__title">Schedule a Visit</h4>
+                            <p>We'll find a convenient time slot for you. Same-day service is available for most issues. Our technician will arrive at your doorstep as scheduled.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">3</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128269;</div>
+                            <h4 class="timeline-item__title">Diagnosis & Quote</h4>
+                            <p>Our technician thoroughly examines your appliance and identifies the problem. You receive an upfront quote with no hidden charges before any work begins.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">4</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128736;</div>
+                            <h4 class="timeline-item__title">Expert Repair</h4>
+                            <p>Upon your approval, we fix the issue using genuine parts. Most repairs are completed on the same visit. Complex issues may require a follow-up.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">5</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#9989;</div>
+                            <h4 class="timeline-item__title">Quality Check & Warranty</h4>
+                            <p>We test the appliance thoroughly before leaving. You receive a warranty card for the repair, giving you peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: var(--space-2xl);">
+                    <a href="contact.html" class="btn btn--primary btn--lg">Book a Repair Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Process -->
+    <section class="section">
+        <div class="container">
+            <div class="process-section">
+                <div class="process-header fade-in">
+                    <div class="process-header__icon">&#128722;</div>
+                    <div>
+                        <h2>Buy a Used Appliance</h2>
+                        <p>Get quality pre-owned appliances with warranty at unbeatable prices.</p>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">1</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128172;</div>
+                            <h4 class="timeline-item__title">Tell Us What You Need</h4>
+                            <p>Contact us with your requirements - type of appliance, preferred brands, capacity needs, and budget. We'll check our current inventory.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">2</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128248;</div>
+                            <h4 class="timeline-item__title">View Available Options</h4>
+                            <p>We share photos and details of matching appliances from our stock. You can also visit our workshop to see them in person if you prefer.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">3</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128176;</div>
+                            <h4 class="timeline-item__title">Confirm & Pay</h4>
+                            <p>Once you've selected your appliance, confirm your order. We accept cash, UPI, and bank transfers. Pay the full amount or a booking advance.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">4</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128666;</div>
+                            <h4 class="timeline-item__title">Free Delivery & Setup</h4>
+                            <p>We deliver to your home at a scheduled time and help with basic installation. Our team ensures everything is working perfectly before they leave.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">5</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128203;</div>
+                            <h4 class="timeline-item__title">Warranty Activated</h4>
+                            <p>You receive a warranty card (3-6 months depending on appliance) covering any defects. Enjoy your new-to-you appliance with confidence!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: var(--space-2xl);">
+                    <a href="contact.html" class="btn btn--primary btn--lg">Browse Available Appliances</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sell Process -->
+    <section class="section section--gray">
+        <div class="container">
+            <div class="process-section">
+                <div class="process-header fade-in">
+                    <div class="process-header__icon">&#128181;</div>
+                    <div>
+                        <h2>Sell Your Old Appliance</h2>
+                        <p>Turn your unused appliances into instant cash with our hassle-free process.</p>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">1</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128248;</div>
+                            <h4 class="timeline-item__title">Share Details & Photos</h4>
+                            <p>Send us photos of your appliance along with basic details - brand, model, age, and condition. You can do this via WhatsApp or our contact form.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">2</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128176;</div>
+                            <h4 class="timeline-item__title">Get an Instant Quote</h4>
+                            <p>Based on your information, we provide an estimated price. This is a fair market value considering the appliance's age, brand, and condition.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">3</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128666;</div>
+                            <h4 class="timeline-item__title">Free Pickup Scheduled</h4>
+                            <p>If you accept the quote, we schedule a free pickup from your location. Our team handles all the heavy lifting - you don't have to do a thing.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">4</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128269;</div>
+                            <h4 class="timeline-item__title">Quick Inspection</h4>
+                            <p>Our team does a quick inspection at pickup to verify the condition matches your description. The final price is confirmed on the spot.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-item__number">5</div>
+                        <div class="timeline-item__content fade-in">
+                            <div class="timeline-item__icon">&#128178;</div>
+                            <h4 class="timeline-item__title">Instant Payment</h4>
+                            <p>Get paid immediately - cash, UPI, or bank transfer. No waiting, no hassle. Your old appliance is now someone else's treasure!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: var(--space-2xl);">
+                    <a href="https://wa.me/WHATSAPP_NUMBER?text=Hi,%20I%20want%20to%20sell%20my%20old%20appliance" class="btn btn--primary btn--lg" target="_blank">Get a Quote Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Our Process Works -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Why Choose Us</span>
+                <h2>What Makes Our Process Different</h2>
+                <p>We've refined our process over years to ensure maximum convenience for our customers.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item fade-in stagger-1">
+                    <div class="feature-item__icon">&#9201;</div>
+                    <h4 class="feature-item__title">No Waiting</h4>
+                    <p>Same-day service for repairs, quick turnaround on purchases and sales. We respect your time.</p>
+                </div>
+                <div class="feature-item fade-in stagger-2">
+                    <div class="feature-item__icon">&#128176;</div>
+                    <h4 class="feature-item__title">Transparent Pricing</h4>
+                    <p>You always know the cost before we proceed. No surprises, no hidden fees, no bargaining.</p>
+                </div>
+                <div class="feature-item fade-in stagger-3">
+                    <div class="feature-item__icon">&#127968;</div>
+                    <h4 class="feature-item__title">Doorstep Service</h4>
+                    <p>Everything happens at your convenience. We come to you for repairs, deliveries, and pickups.</p>
+                </div>
+                <div class="feature-item fade-in stagger-4">
+                    <div class="feature-item__icon">&#9989;</div>
+                    <h4 class="feature-item__title">Quality Guaranteed</h4>
+                    <p>Warranty on all repairs and used appliances. We stand behind everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content fade-in">
+                <h2 class="cta__title">Ready to Get Started?</h2>
+                <p class="cta__text">Pick your service and let's begin. It's really that simple!</p>
+                <div class="btn-group" style="justify-content: center;">
+                    <a href="tel:PHONE_NUMBER" class="btn btn--white btn--lg">
+                        <span>&#9742;</span> Call Now
+                    </a>
+                    <a href="https://wa.me/WHATSAPP_NUMBER" class="btn btn--accent btn--lg" target="_blank">
+                        <span>&#9993;</span> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <span class="footer__logo-icon">U</span>
+                        Unity Appliances
+                    </a>
+                    <p class="footer__text">Your trusted partner for appliance repair, quality used appliances, and hassle-free selling. Serving CITY_NAME and surrounding areas.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram">in</a>
+                        <a href="#" class="footer__social-link" aria-label="YouTube">yt</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Services</h4>
+                    <ul class="footer__links">
+                        <li><a href="services.html#fridge">Fridge Repair</a></li>
+                        <li><a href="services.html#ac">AC Services</a></li>
+                        <li><a href="services.html#washing">Washing Machine</a></li>
+                        <li><a href="services.html#oven">Oven & Microwave</a></li>
+                        <li><a href="services.html#sell">Sell Your Appliance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Contact Us</h4>
+                    <ul class="footer__links">
+                        <li>ADDRESS</li>
+                        <li>CITY_NAME</li>
+                        <li><a href="tel:PHONE_NUMBER">PHONE_NUMBER</a></li>
+                        <li><a href="mailto:EMAIL_ADDRESS">EMAIL_ADDRESS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 Unity Appliances. All rights reserved.</p>
+                <div class="footer__bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/WHATSAPP_NUMBER" class="whatsapp-float__btn" target="_blank" aria-label="Chat on WhatsApp">
+            &#128172;
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

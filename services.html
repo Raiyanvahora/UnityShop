@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unity Appliances services - Fridge repair, AC services, washing machine repair, oven repair, buy used appliances, and sell your old appliances in CITY_NAME.">
+    <title>Our Services | Unity Appliances</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header__container">
+            <a href="index.html" class="header__logo">
+                <span class="header__logo-icon">U</span>
+                Unity Appliances
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list" id="navList">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="services.html" class="nav__link active">Services</a></li>
+                    <li><a href="how-it-works.html" class="nav__link">How It Works</a></li>
+                    <li><a href="faq.html" class="nav__link">FAQ</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+                <a href="tel:PHONE_NUMBER" class="btn btn--primary btn--sm nav__cta">Call Now</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header__content">
+                <h1 class="page-header__title">Our Services</h1>
+                <div class="page-header__breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Services</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">What We Offer</span>
+                <h2>Complete Appliance Solutions</h2>
+                <p>From repairs to resale, we handle everything to keep your home running smoothly and sustainably.</p>
+            </div>
+
+            <!-- Fridge Services -->
+            <div class="service-detail" id="fridge">
+                <div class="service-detail__image fade-in-left">
+                    &#10052;
+                </div>
+                <div class="service-detail__content fade-in-right">
+                    <h3>Refrigerator Services</h3>
+                    <p>Your fridge works 24/7 to keep your food fresh. When it fails, you need fast, reliable service. Our technicians diagnose and fix all refrigerator issues, from minor repairs to major overhauls.</p>
+                    <ul class="service-detail__list">
+                        <li>Cooling problems and thermostat repair</li>
+                        <li>Compressor diagnosis and replacement</li>
+                        <li>Gas refilling and leak detection</li>
+                        <li>Door seal replacement</li>
+                        <li>Ice maker and water dispenser repair</li>
+                        <li>Noise and vibration troubleshooting</li>
+                    </ul>
+                    <p><strong>Used Fridges Available:</strong> Browse our selection of thoroughly tested, cleaned, and warrantied pre-owned refrigerators. Save up to 50% compared to new!</p>
+                    <a href="contact.html" class="btn btn--primary">Book a Repair</a>
+                </div>
+            </div>
+
+            <!-- AC Services -->
+            <div class="service-detail" id="ac">
+                <div class="service-detail__image fade-in-right">
+                    &#10054;
+                </div>
+                <div class="service-detail__content fade-in-left">
+                    <h3>Air Conditioner Services</h3>
+                    <p>Beat the heat with our comprehensive AC solutions. Whether you need installation, repair, regular servicing, or a quality used AC unit, we've got you covered.</p>
+                    <ul class="service-detail__list">
+                        <li>AC installation (split & window units)</li>
+                        <li>Gas charging and leak repair</li>
+                        <li>Compressor and capacitor replacement</li>
+                        <li>Deep cleaning and maintenance service</li>
+                        <li>PCB and sensor troubleshooting</li>
+                        <li>Annual maintenance contracts available</li>
+                    </ul>
+                    <p><strong>Used ACs Available:</strong> Quality pre-owned air conditioners, fully serviced with fresh gas charge. Perfect for budget-conscious cooling.</p>
+                    <a href="contact.html" class="btn btn--primary">Get AC Service</a>
+                </div>
+            </div>
+
+            <!-- Washing Machine Services -->
+            <div class="service-detail" id="washing">
+                <div class="service-detail__image fade-in-left">
+                    &#127754;
+                </div>
+                <div class="service-detail__content fade-in-right">
+                    <h3>Washing Machine Services</h3>
+                    <p>From top-loaders to front-loaders, semi-automatic to fully automatic, our technicians handle all types of washing machines from every major brand.</p>
+                    <ul class="service-detail__list">
+                        <li>Drum and bearing replacement</li>
+                        <li>Motor repair and replacement</li>
+                        <li>Water inlet/outlet problems</li>
+                        <li>Timer and program issues</li>
+                        <li>Vibration and noise fixes</li>
+                        <li>Drain pump and filter cleaning</li>
+                    </ul>
+                    <p><strong>Used Washing Machines Available:</strong> Certified refurbished machines tested through multiple wash cycles. All come with warranty.</p>
+                    <a href="contact.html" class="btn btn--primary">Fix My Washer</a>
+                </div>
+            </div>
+
+            <!-- Oven & Microwave Services -->
+            <div class="service-detail" id="oven">
+                <div class="service-detail__image fade-in-right">
+                    &#127859;
+                </div>
+                <div class="service-detail__content fade-in-left">
+                    <h3>Oven & Microwave Repair</h3>
+                    <p>Don't let a broken microwave or oven disrupt your kitchen routine. Our experts repair all types of cooking appliances quickly and affordably.</p>
+                    <ul class="service-detail__list">
+                        <li>Microwave not heating issues</li>
+                        <li>Magnetron and capacitor replacement</li>
+                        <li>Turntable motor repair</li>
+                        <li>OTG heating element replacement</li>
+                        <li>Thermostat and timer fixes</li>
+                        <li>Door switch and latch repair</li>
+                    </ul>
+                    <p>We service solo microwaves, convection microwaves, OTGs, and built-in ovens from all major brands.</p>
+                    <a href="contact.html" class="btn btn--primary">Repair My Oven</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Used Section -->
+    <section class="section section--gray" id="buy">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Buy Smart</span>
+                <h2>Quality Used Appliances</h2>
+                <p>Why pay full price when you can get thoroughly tested, warrantied appliances at a fraction of the cost?</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in stagger-1">
+                    <div class="service-card__icon">&#128269;</div>
+                    <h4 class="service-card__title">25-Point Inspection</h4>
+                    <p class="service-card__text">Every appliance undergoes rigorous testing to ensure it meets our quality standards before listing.</p>
+                </div>
+                <div class="service-card fade-in stagger-2">
+                    <div class="service-card__icon">&#10024;</div>
+                    <h4 class="service-card__title">Deep Cleaned</h4>
+                    <p class="service-card__text">Professionally sanitized inside and out. Your used appliance will look and smell fresh.</p>
+                </div>
+                <div class="service-card fade-in stagger-3">
+                    <div class="service-card__icon">&#128203;</div>
+                    <h4 class="service-card__title">Warranty Included</h4>
+                    <p class="service-card__text">All used appliances come with 3-6 months warranty. Buy with complete confidence.</p>
+                </div>
+                <div class="service-card fade-in stagger-4">
+                    <div class="service-card__icon">&#128666;</div>
+                    <h4 class="service-card__title">Free Delivery</h4>
+                    <p class="service-card__text">We deliver to your doorstep and help with basic installation at no extra charge.</p>
+                </div>
+                <div class="service-card fade-in stagger-1">
+                    <div class="service-card__icon">&#128176;</div>
+                    <h4 class="service-card__title">Save Up to 60%</h4>
+                    <p class="service-card__text">Get the same functionality at a fraction of the price. Smart savings for smart shoppers.</p>
+                </div>
+                <div class="service-card fade-in stagger-2">
+                    <div class="service-card__icon">&#127793;</div>
+                    <h4 class="service-card__title">Eco-Friendly Choice</h4>
+                    <p class="service-card__text">Buying used extends the life of appliances and reduces electronic waste. Good for your wallet and the planet.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-2xl);">
+                <a href="contact.html" class="btn btn--primary btn--lg">Browse Available Appliances</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sell Your Appliance Section -->
+    <section class="section" id="sell">
+        <div class="container">
+            <div class="about-intro">
+                <div class="about-intro__content fade-in-left">
+                    <span class="section-label">Sell to Us</span>
+                    <h2>Turn Your Old Appliance Into Cash</h2>
+                    <p>Upgrading your appliances? Don't let the old ones gather dust or end up in a landfill. We buy used appliances in any condition and pay you fairly.</p>
+                    <ul class="service-detail__list">
+                        <li>Working or non-working - we'll make an offer</li>
+                        <li>Free pickup from your home</li>
+                        <li>Instant cash payment</li>
+                        <li>No haggling or hidden deductions</li>
+                        <li>All brands and types accepted</li>
+                        <li>Eco-friendly disposal for non-repairable units</li>
+                    </ul>
+                    <p><strong>What we buy:</strong> Refrigerators, ACs, washing machines, microwaves, and more. Even if it's not working, we'll evaluate and offer a fair price.</p>
+                    <div class="btn-group">
+                        <a href="tel:PHONE_NUMBER" class="btn btn--primary">
+                            <span>&#9742;</span> Call for Quote
+                        </a>
+                        <a href="https://wa.me/WHATSAPP_NUMBER?text=Hi,%20I%20want%20to%20sell%20my%20old%20appliance" class="btn btn--accent" target="_blank">
+                            <span>&#9993;</span> WhatsApp Quote
+                        </a>
+                    </div>
+                </div>
+                <div class="about-intro__image fade-in-right">
+                    &#128181;
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="section section--gray">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Coverage</span>
+                <h2>Areas We Serve</h2>
+                <p>Proudly serving CITY_NAME and surrounding neighborhoods with reliable appliance services.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item fade-in stagger-1">
+                    <div class="feature-item__icon">&#128205;</div>
+                    <h4 class="feature-item__title">CITY_NAME Central</h4>
+                    <p>Quick service coverage across all central areas with same-day availability.</p>
+                </div>
+                <div class="feature-item fade-in stagger-2">
+                    <div class="feature-item__icon">&#128205;</div>
+                    <h4 class="feature-item__title">North CITY_NAME</h4>
+                    <p>Extended coverage to northern suburbs and residential areas.</p>
+                </div>
+                <div class="feature-item fade-in stagger-3">
+                    <div class="feature-item__icon">&#128205;</div>
+                    <h4 class="feature-item__title">South CITY_NAME</h4>
+                    <p>Serving all major localities in the southern parts of the city.</p>
+                </div>
+                <div class="feature-item fade-in stagger-4">
+                    <div class="feature-item__icon">&#128205;</div>
+                    <h4 class="feature-item__title">Surrounding Areas</h4>
+                    <p>Contact us if you're nearby - we're expanding our coverage regularly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content fade-in">
+                <h2 class="cta__title">Need Appliance Help?</h2>
+                <p class="cta__text">Whether it's a repair, purchase, or sale, we're just a call away. Get in touch for a free quote!</p>
+                <div class="btn-group" style="justify-content: center;">
+                    <a href="tel:PHONE_NUMBER" class="btn btn--white btn--lg">
+                        <span>&#9742;</span> Call Now
+                    </a>
+                    <a href="https://wa.me/WHATSAPP_NUMBER" class="btn btn--accent btn--lg" target="_blank">
+                        <span>&#9993;</span> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <span class="footer__logo-icon">U</span>
+                        Unity Appliances
+                    </a>
+                    <p class="footer__text">Your trusted partner for appliance repair, quality used appliances, and hassle-free selling. Serving CITY_NAME and surrounding areas.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram">in</a>
+                        <a href="#" class="footer__social-link" aria-label="YouTube">yt</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Services</h4>
+                    <ul class="footer__links">
+                        <li><a href="services.html#fridge">Fridge Repair</a></li>
+                        <li><a href="services.html#ac">AC Services</a></li>
+                        <li><a href="services.html#washing">Washing Machine</a></li>
+                        <li><a href="services.html#oven">Oven & Microwave</a></li>
+                        <li><a href="services.html#sell">Sell Your Appliance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Contact Us</h4>
+                    <ul class="footer__links">
+                        <li>ADDRESS</li>
+                        <li>CITY_NAME</li>
+                        <li><a href="tel:PHONE_NUMBER">PHONE_NUMBER</a></li>
+                        <li><a href="mailto:EMAIL_ADDRESS">EMAIL_ADDRESS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 Unity Appliances. All rights reserved.</p>
+                <div class="footer__bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/WHATSAPP_NUMBER" class="whatsapp-float__btn" target="_blank" aria-label="Chat on WhatsApp">
+            &#128172;
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

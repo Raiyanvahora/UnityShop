@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unity Appliances - Buy, Sell & Repair Used & Refurbished Home Appliances. Fridges, ACs, Washing Machines, Ovens at Best Prices.">
+    <title>Unity Appliances | Buy, Sell & Repair Home Appliances</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">in</a>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <a href="contact.html">My Account</a>
+                <a href="cart.html">Shopping Cart</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">U</span>
+                    Unity Appliances
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html">Shop Now</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="refund.html">Refund & Returns</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+            <div class="header-icons">
+                <button class="header-icon search-icon" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <a href="cart.html" class="header-icon cart-icon" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <a href="index.html">Unity Appliances</a>
+            </div>
+            <button class="mobile-menu-close">&times;</button>
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="shop.html">Shop Now</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="refund.html">Refund & Returns</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="cart.html">Shopping Cart</a>
+        </nav>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <button class="search-close">&times;</button>
+        <div class="search-overlay-content">
+            <input type="text" placeholder="Search for products...">
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Quality Appliances at Affordable Prices</p>
+            <h1 class="hero-title">Unity Appliances<br>Season Sale on Used & Refurbished Appliances</h1>
+            <p class="hero-text">Save up to 60% on quality fridges, ACs, washing machines, and ovens. All items tested, serviced, and warranty included.</p>
+            <a href="shop.html" class="btn btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Discover Our</p>
+                <h2 class="section-title"><span>New</span> Arrivals</h2>
+            </div>
+            <div class="products-grid" id="newArrivalsGrid">
+                <!-- Products will be loaded via JavaScript -->
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="shop.html" class="btn btn-dark">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="promo-banner-content">
+            <p class="promo-banner-subtitle">Limited Time Offer</p>
+            <h2 class="promo-banner-title">Big Monsoon Service Sale</h2>
+            <p class="promo-banner-text">Get your appliances serviced and repaired at special discounted rates. Free inspection included with every service!</p>
+            <a href="shop.html" class="btn btn-primary">Show All Products</a>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Check Our</p>
+                <h2 class="section-title"><span>Featured</span> Products</h2>
+            </div>
+            <div class="products-grid" id="featuredProductsGrid">
+                <!-- Products will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Triple Banner Strip -->
+    <section class="triple-banner">
+        <div class="triple-banner-item">
+            <div class="triple-banner-content">
+                <div class="triple-banner-icon">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                        <line x1="4" y1="10" x2="20" y2="10"></line>
+                    </svg>
+                </div>
+                <h3 class="triple-banner-title">Fridges & Deep Freezers</h3>
+                <p class="triple-banner-price">Starting from Rs 7,999</p>
+                <a href="shop.html" class="btn btn-primary btn-sm">Shop Now</a>
+            </div>
+        </div>
+        <div class="triple-banner-item">
+            <div class="triple-banner-content">
+                <div class="triple-banner-icon">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="4" width="20" height="10" rx="2"></rect>
+                        <path d="M6 18v-4M10 18v-4M14 18v-4M18 18v-4"></path>
+                    </svg>
+                </div>
+                <h3 class="triple-banner-title">ACs & Coolers</h3>
+                <p class="triple-banner-price">Starting from Rs 9,999</p>
+                <a href="shop.html" class="btn btn-primary btn-sm">Shop Now</a>
+            </div>
+        </div>
+        <div class="triple-banner-item">
+            <div class="triple-banner-content">
+                <div class="triple-banner-icon">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                        <circle cx="12" cy="14" r="4"></circle>
+                    </svg>
+                </div>
+                <h3 class="triple-banner-title">Washing Machines & Ovens</h3>
+                <p class="triple-banner-price">Starting from Rs 4,999</p>
+                <a href="shop.html" class="btn btn-primary btn-sm">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h4 class="feature-title">Free Inspection</h4>
+                    <p class="feature-text">Free appliance inspection in your city. No hidden charges.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                            <rect x="2" y="7" width="20" height="5"></rect>
+                            <line x1="12" y1="22" x2="12" y2="7"></line>
+                        </svg>
+                    </div>
+                    <h4 class="feature-title">Easy Returns</h4>
+                    <p class="feature-text">7-day easy returns. Warranty on select items up to 6 months.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="feature-title">24/7 Support</h4>
+                    <p class="feature-text">Round the clock customer support for all your queries.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h4 class="feature-title">Cash & UPI Accepted</h4>
+                    <p class="feature-text">Pay via cash, UPI, cards, or net banking. Flexible options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <!-- Contact Info -->
+                <div class="footer-widget">
+                    <h4 class="footer-widget-title">Contact Us</h4>
+                    <div class="footer-contact">
+                        <p>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            123 Appliance Street, Main Road
+                        </p>
+                        <p>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Your City, State - 123456
+                        </p>
+                        <p>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            +91 98765 43210
+                        </p>
+                        <p>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            info@unityappliances.com
+                        </p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#">f</a>
+                        <a href="#">in</a>
+                        <a href="#">yt</a>
+                        <a href="#">tw</a>
+                    </div>
+                </div>
+
+                <!-- Recent Products -->
+                <div class="footer-widget">
+                    <h4 class="footer-widget-title">Recent Products</h4>
+                    <div class="recent-products-list">
+                        <a href="shop.html" class="recent-product-item">
+                            <div class="recent-product-thumb">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                                    <line x1="4" y1="10" x2="20" y2="10"></line>
+                                </svg>
+                            </div>
+                            <div class="recent-product-info">
+                                <h4>Samsung Refrigerator</h4>
+                                <span>Rs 18,999</span>
+                            </div>
+                        </a>
+                        <a href="shop.html" class="recent-product-item">
+                            <div class="recent-product-thumb">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="4" width="20" height="10" rx="2"></rect>
+                                    <path d="M6 18v-4M10 18v-4M14 18v-4M18 18v-4"></path>
+                                </svg>
+                            </div>
+                            <div class="recent-product-info">
+                                <h4>LG Split AC 1.5 Ton</h4>
+                                <span>Rs 22,999</span>
+                            </div>
+                        </a>
+                        <a href="shop.html" class="recent-product-item">
+                            <div class="recent-product-thumb">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                                    <circle cx="12" cy="14" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="recent-product-info">
+                                <h4>Whirlpool Washing Machine</h4>
+                                <span>Rs 14,999</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Useful Links -->
+                <div class="footer-widget">
+                    <h4 class="footer-widget-title">Useful Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="refund.html">Refund & Returns Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tags -->
+                <div class="footer-widget">
+                    <h4 class="footer-widget-title">Popular Tags</h4>
+                    <div class="footer-tags">
+                        <a href="shop.html" class="footer-tag">Fridges</a>
+                        <a href="shop.html" class="footer-tag">ACs</a>
+                        <a href="shop.html" class="footer-tag">Washing Machines</a>
+                        <a href="shop.html" class="footer-tag">Ovens</a>
+                        <a href="shop.html" class="footer-tag">Used</a>
+                        <a href="shop.html" class="footer-tag">Refurbished</a>
+                        <a href="shop.html" class="footer-tag">Sale</a>
+                        <a href="shop.html" class="footer-tag">Warranty</a>
+                        <a href="shop.html" class="footer-tag">Spare Parts</a>
+                        <a href="shop.html" class="footer-tag">Repair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Unity Appliances. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
