@@ -2016,6 +2016,8 @@ input, textarea, select {
         padding: 0 20px 0 20px;
         text-align: center;
         width: 100%;
+        position: relative;
+        z-index: 10;
     }
 
     .hero-line {
