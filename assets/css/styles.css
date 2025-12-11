@@ -730,6 +730,13 @@ input, textarea, select {
 }
 
 /* =====================================================
+   MOBILE NEWSLETTER BAR (hidden on desktop)
+   ===================================================== */
+.mobile-newsletter {
+    display: none;
+}
+
+/* =====================================================
    FEATURES SECTION
    ===================================================== */
 .features {
@@ -1795,11 +1802,7 @@ input, textarea, select {
     }
 
     .triple-banner {
-        grid-template-columns: 1fr;
-    }
-
-    .triple-banner-item {
-        height: 250px;
+        display: none;
     }
 
     .shop-layout {
@@ -2081,34 +2084,67 @@ input, textarea, select {
        MOBILE FEATURES SECTION
        ===================================================== */
     .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .feature-item {
-        padding: 20px 12px;
-        border-radius: 8px;
+        padding: 50px 20px;
+        border-radius: 0;
+        background-color: var(--white);
+        border-bottom: 1px solid #eee;
+    }
+
+    .feature-item:last-child {
+        border-bottom: none;
     }
 
     .feature-item:hover {
-        transform: translateY(-3px);
+        transform: none;
+        box-shadow: none;
     }
 
     .feature-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        margin-bottom: 12px;
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+        margin-bottom: 20px;
+        background-color: var(--primary-yellow);
+    }
+
+    .feature-icon svg {
+        width: 35px;
+        height: 35px;
     }
 
     .feature-title {
-        font-size: 13px;
-        margin-bottom: 6px;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     .feature-text {
-        font-size: 11px;
-        line-height: 1.5;
+        display: none;
+    }
+
+    /* =====================================================
+       MOBILE NEWSLETTER BAR
+       ===================================================== */
+    .mobile-newsletter {
+        display: block;
+        background-color: #1a1a1a;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .mobile-newsletter p {
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin: 0;
     }
 
     /* =====================================================
@@ -2141,30 +2177,9 @@ input, textarea, select {
     }
 
     /* =====================================================
-       MOBILE TRIPLE BANNER
+       MOBILE TRIPLE BANNER - Hidden on mobile
        ===================================================== */
-    .triple-banner-item {
-        height: 200px;
-    }
-
-    .triple-banner-content {
-        padding: 20px;
-    }
-
-    .triple-banner-icon {
-        font-size: 36px;
-        margin-bottom: 12px;
-    }
-
-    .triple-banner-title {
-        font-size: 18px;
-        margin-bottom: 6px;
-    }
-
-    .triple-banner-price {
-        font-size: 13px;
-        margin-bottom: 15px;
-    }
+    /* Triple banner is hidden via display:none at 1024px breakpoint */
 
     /* =====================================================
        MOBILE FOOTER - Compact like Ecomshift
@@ -2617,32 +2632,36 @@ input, textarea, select {
     }
 
     /* =====================================================
-       EXTRA SMALL MOBILE - Features (2 columns)
+       EXTRA SMALL MOBILE - Features (1 column vertical)
        ===================================================== */
     .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .feature-item {
-        padding: 15px 10px;
+        padding: 40px 15px;
     }
 
     .feature-icon {
-        width: 42px;
-        height: 42px;
-        font-size: 18px;
-        margin-bottom: 10px;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .feature-icon svg {
+        width: 30px;
+        height: 30px;
     }
 
     .feature-title {
-        font-size: 11px;
-        margin-bottom: 4px;
+        font-size: 14px;
+        margin-bottom: 0;
     }
 
     .feature-text {
-        font-size: 10px;
-        display: none; /* Hide on very small screens */
+        display: none;
     }
 
     /* =====================================================
@@ -2667,35 +2686,7 @@ input, textarea, select {
         margin-bottom: 18px;
     }
 
-    /* =====================================================
-       EXTRA SMALL MOBILE - Triple Banner
-       ===================================================== */
-    .triple-banner-item {
-        height: 180px;
-    }
-
-    .triple-banner-content {
-        padding: 15px;
-    }
-
-    .triple-banner-icon {
-        font-size: 30px;
-        margin-bottom: 10px;
-    }
-
-    .triple-banner-title {
-        font-size: 16px;
-    }
-
-    .triple-banner-price {
-        font-size: 12px;
-        margin-bottom: 12px;
-    }
-
-    .triple-banner-item .btn-sm {
-        padding: 8px 16px;
-        font-size: 9px;
-    }
+    /* Triple banner hidden on mobile - see 768px breakpoint */
 
     /* =====================================================
        EXTRA SMALL MOBILE - Footer
