@@ -4399,3 +4399,1429 @@ input, textarea, select {
         box-shadow: 0 0 0 3px rgba(26, 79, 68, 0.1);
     }
 }
+
+/* =====================================================
+   SMOOTH ANIMATIONS & DYNAMIC EFFECTS
+   ===================================================== */
+
+/* Page Loading Animation */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary-yellow);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Fade In Up Animation */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In Left Animation */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade In Right Animation */
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale In Animation */
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Stagger Animation for Product Cards */
+.products-grid .product-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.products-grid .product-card:nth-child(1) { animation-delay: 0.1s; }
+.products-grid .product-card:nth-child(2) { animation-delay: 0.2s; }
+.products-grid .product-card:nth-child(3) { animation-delay: 0.3s; }
+.products-grid .product-card:nth-child(4) { animation-delay: 0.4s; }
+.products-grid .product-card:nth-child(5) { animation-delay: 0.5s; }
+.products-grid .product-card:nth-child(6) { animation-delay: 0.6s; }
+.products-grid .product-card:nth-child(7) { animation-delay: 0.7s; }
+.products-grid .product-card:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Product Card Hover */
+.product-card {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+.product-image img {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Button Ripple Effect */
+.btn, .btn-add-cart {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after, .btn-add-cart::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:active::after, .btn-add-cart:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Enhanced Button Hover */
+.btn-primary {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(252, 214, 0, 0.4);
+}
+
+.btn-add-cart {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-add-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(252, 214, 0, 0.35);
+}
+
+/* Section Headers Animation */
+.section-header {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Hero Section Animations */
+.hero-content {
+    animation: heroFadeIn 1s ease-out;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    animation: heroTitleSlide 0.8s ease-out 0.2s both;
+}
+
+@keyframes heroTitleSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero .btn {
+    animation: heroBtnPop 0.5s ease-out 0.6s both;
+}
+
+@keyframes heroBtnPop {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Stats Counter Animation */
+.stat-number {
+    display: inline-block;
+}
+
+.stat-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stat-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Feature Items Animation */
+.feature-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease;
+}
+
+.feature-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-item:hover {
+    transform: translateY(-8px);
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.feature-icon {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth Image Loading */
+.product-image img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.product-image img.loaded {
+    opacity: 1;
+}
+
+/* Cart Icon Bounce on Add */
+@keyframes cartBounce {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.3); }
+    50% { transform: scale(0.9); }
+    75% { transform: scale(1.1); }
+}
+
+.cart-icon.bounce {
+    animation: cartBounce 0.5s ease;
+}
+
+/* Notification Slide In */
+.notification {
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+/* Header Scroll Animation */
+.main-header {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.main-header.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Link Hover Underline Animation */
+.nav-menu a {
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-yellow);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* Footer Links Hover */
+.footer-links a {
+    position: relative;
+    transition: padding-left 0.3s ease, color 0.3s ease;
+}
+
+.footer-links a:hover {
+    padding-left: 10px;
+    color: var(--primary-yellow);
+}
+
+/* Social Icons Pulse on Hover */
+.footer-social a:hover,
+.social-icons a:hover {
+    animation: socialPulse 0.4s ease;
+}
+
+@keyframes socialPulse {
+    0%, 100% { transform: scale(1) translateY(-2px); }
+    50% { transform: scale(1.15) translateY(-2px); }
+}
+
+/* Page Header Parallax Effect */
+.page-header {
+    background-attachment: fixed;
+    transition: background-position 0.1s ease-out;
+}
+
+/* Smooth Form Focus */
+input, textarea, select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    transform: translateY(-2px);
+}
+
+/* Triple Banner Hover */
+.triple-banner-item {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.triple-banner-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Promo Banner Pulse */
+.promo-banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Breadcrumb Animation */
+.breadcrumb a {
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-yellow);
+}
+
+/* Mobile Touch Feedback */
+@media (max-width: 768px) {
+    .product-card:active {
+        transform: scale(0.98);
+    }
+
+    .btn:active, .btn-add-cart:active {
+        transform: scale(0.95);
+    }
+
+    .feature-item:active {
+        transform: scale(0.97);
+    }
+}
+
+/* =====================================================
+   TYPING ANIMATION
+   ===================================================== */
+.typing-text {
+    overflow: hidden;
+    border-right: 3px solid var(--primary-yellow);
+    white-space: nowrap;
+    animation: typing 3s steps(30) 1s forwards, blink 0.7s step-end infinite;
+    width: 0;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* =====================================================
+   PULSE ANIMATIONS
+   ===================================================== */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.pulse-glow {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(252, 214, 0, 0.4); }
+    50% { box-shadow: 0 0 20px 10px rgba(252, 214, 0, 0); }
+}
+
+/* Add to Cart Button Pulse */
+.btn-add-cart, .btn-add-to-cart {
+    animation: pulseGlow 2s infinite;
+}
+
+.btn-add-cart:hover, .btn-add-to-cart:hover {
+    animation: none;
+}
+
+/* =====================================================
+   SHAKE ANIMATION (for errors/attention)
+   ===================================================== */
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    60% { transform: translateX(-10px); }
+    80% { transform: translateX(10px); }
+}
+
+/* =====================================================
+   BOUNCE ANIMATION
+   ===================================================== */
+.bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* =====================================================
+   FLIP ANIMATION
+   ===================================================== */
+.flip-in {
+    animation: flipIn 0.6s ease-out;
+    backface-visibility: visible;
+}
+
+@keyframes flipIn {
+    0% { transform: perspective(400px) rotateY(90deg); opacity: 0; }
+    40% { transform: perspective(400px) rotateY(-10deg); }
+    70% { transform: perspective(400px) rotateY(10deg); }
+    100% { transform: perspective(400px) rotateY(0); opacity: 1; }
+}
+
+/* =====================================================
+   SLIDE ANIMATIONS
+   ===================================================== */
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-up {
+    animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-in-down {
+    animation: slideInDown 0.5s ease-out;
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* =====================================================
+   ZOOM ANIMATIONS
+   ===================================================== */
+.zoom-in {
+    animation: zoomIn 0.4s ease-out;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.zoom-out {
+    animation: zoomOut 0.4s ease-out;
+}
+
+@keyframes zoomOut {
+    from { transform: scale(1.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* =====================================================
+   ROTATE ANIMATIONS
+   ===================================================== */
+.rotate-in {
+    animation: rotateIn 0.6s ease-out;
+}
+
+@keyframes rotateIn {
+    from { transform: rotate(-200deg) scale(0); opacity: 0; }
+    to { transform: rotate(0) scale(1); opacity: 1; }
+}
+
+/* =====================================================
+   FLOAT ANIMATION
+   ===================================================== */
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Logo Float Effect */
+.logo-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* =====================================================
+   GLOW EFFECT
+   ===================================================== */
+.glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 5px var(--primary-yellow), 0 0 10px var(--primary-yellow); }
+    to { box-shadow: 0 0 20px var(--primary-yellow), 0 0 30px var(--primary-yellow); }
+}
+
+/* =====================================================
+   GRADIENT ANIMATION
+   ===================================================== */
+.gradient-animate {
+    background: linear-gradient(-45deg, var(--dark-green), var(--dark-green-light), var(--primary-yellow), var(--dark-green));
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =====================================================
+   PAGE TRANSITIONS
+   ===================================================== */
+.page-transition {
+    animation: pageIn 0.5s ease-out;
+}
+
+@keyframes pageIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Main content fade in */
+main, .section:first-of-type {
+    animation: pageIn 0.6s ease-out;
+}
+
+/* =====================================================
+   PRODUCT PAGE SPECIFIC ANIMATIONS
+   ===================================================== */
+.product-detail-image {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.product-detail-info {
+    animation: slideInRight 0.6s ease-out 0.2s both;
+}
+
+.product-detail-title {
+    animation: fadeInUp 0.5s ease-out 0.3s both;
+}
+
+.product-detail-price {
+    animation: fadeInUp 0.5s ease-out 0.4s both;
+}
+
+.product-add-to-cart {
+    animation: fadeInUp 0.5s ease-out 0.5s both;
+}
+
+.product-tabs-section {
+    animation: fadeInUp 0.5s ease-out 0.6s both;
+}
+
+/* Product Image Zoom on Hover */
+.product-detail-image {
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.product-detail-image:hover .product-main-image img {
+    transform: scale(1.2);
+}
+
+.product-main-image img {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* =====================================================
+   TAB ANIMATIONS
+   ===================================================== */
+.tab-btn {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--primary-yellow);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.tab-btn.active::after,
+.tab-btn:hover::after {
+    width: 100%;
+}
+
+.tab-pane {
+    animation: tabFadeIn 0.4s ease-out;
+}
+
+@keyframes tabFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================================================
+   QUANTITY SELECTOR ANIMATIONS
+   ===================================================== */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+}
+
+.qty-btn, .qty-minus, .qty-plus {
+    transition: all 0.2s ease;
+}
+
+.qty-btn:hover, .qty-minus:hover, .qty-plus:hover {
+    transform: scale(1.1);
+    background: var(--primary-yellow);
+}
+
+.qty-btn:active, .qty-minus:active, .qty-plus:active {
+    transform: scale(0.95);
+}
+
+.qty-input {
+    transition: all 0.3s ease;
+}
+
+.qty-input:focus {
+    transform: scale(1.05);
+    border-color: var(--primary-yellow);
+}
+
+/* =====================================================
+   FEATURE ICON ANIMATIONS
+   ===================================================== */
+.feature-icon-item {
+    transition: all 0.3s ease;
+}
+
+.feature-icon-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon-circle {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.feature-icon-item:hover .feature-icon-circle {
+    transform: rotateY(180deg);
+    background: var(--primary-yellow);
+}
+
+/* =====================================================
+   CARD TILT EFFECT (3D)
+   ===================================================== */
+.product-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
+}
+
+/* =====================================================
+   SIDEBAR ANIMATIONS
+   ===================================================== */
+.sidebar-widget {
+    animation: slideInLeft 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.sidebar-widget:nth-child(1) { animation-delay: 0.1s; }
+.sidebar-widget:nth-child(2) { animation-delay: 0.2s; }
+.sidebar-widget:nth-child(3) { animation-delay: 0.3s; }
+
+.category-list li {
+    transition: all 0.3s ease;
+}
+
+.category-list li:hover {
+    transform: translateX(10px);
+    background: rgba(252, 214, 0, 0.1);
+}
+
+/* =====================================================
+   CHECKBOX/RADIO CUSTOM ANIMATIONS
+   ===================================================== */
+input[type="checkbox"], input[type="radio"] {
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked, input[type="radio"]:checked {
+    animation: checkPop 0.3s ease;
+}
+
+@keyframes checkPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* =====================================================
+   TOOLTIP ANIMATION
+   ===================================================== */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--text-dark);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* =====================================================
+   LOADING SKELETON ANIMATION
+   ===================================================== */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton 1.5s infinite;
+}
+
+@keyframes skeleton {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* =====================================================
+   PRICE TAG ANIMATION
+   ===================================================== */
+.price-current {
+    display: inline-block;
+    animation: pricePopIn 0.5s ease-out;
+}
+
+@keyframes pricePopIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* =====================================================
+   SCROLL INDICATOR
+   ===================================================== */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--primary-yellow);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* =====================================================
+   BACK TO TOP BUTTON
+   ===================================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top svg {
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover svg {
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   MOBILE MENU ANIMATIONS
+   ===================================================== */
+.mobile-menu {
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-menu-nav a {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.active .mobile-menu-nav a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-menu.active .mobile-menu-nav a:nth-child(1) { transition-delay: 0.1s; }
+.mobile-menu.active .mobile-menu-nav a:nth-child(2) { transition-delay: 0.15s; }
+.mobile-menu.active .mobile-menu-nav a:nth-child(3) { transition-delay: 0.2s; }
+.mobile-menu.active .mobile-menu-nav a:nth-child(4) { transition-delay: 0.25s; }
+.mobile-menu.active .mobile-menu-nav a:nth-child(5) { transition-delay: 0.3s; }
+.mobile-menu.active .mobile-menu-nav a:nth-child(6) { transition-delay: 0.35s; }
+.mobile-menu.active .mobile-menu-nav a:nth-child(7) { transition-delay: 0.4s; }
+.mobile-menu.active .mobile-menu-nav a:nth-child(8) { transition-delay: 0.45s; }
+
+/* =====================================================
+   IMAGE LIGHTBOX
+   ===================================================== */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lightbox.active img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.lightbox-close:hover {
+    transform: rotate(90deg);
+}
+
+/* =====================================================
+   SUCCESS CHECKMARK ANIMATION
+   ===================================================== */
+.success-checkmark {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.success-checkmark .check-icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 4px solid var(--dark-green);
+}
+
+.success-checkmark .check-icon::before {
+    top: 3px;
+    left: -2px;
+    width: 30px;
+    transform-origin: 100% 50%;
+    border-radius: 100px 0 0 100px;
+}
+
+.success-checkmark .check-icon::after {
+    top: 0;
+    left: 30px;
+    width: 60px;
+    transform-origin: 0 50%;
+    border-radius: 0 100px 100px 0;
+    animation: rotate-circle 4.25s ease-in;
+}
+
+.success-checkmark .check-icon .icon-line {
+    height: 5px;
+    background-color: var(--dark-green);
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+}
+
+.success-checkmark .check-icon .line-tip {
+    top: 46px;
+    left: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+    animation: icon-line-tip 0.75s;
+}
+
+.success-checkmark .check-icon .line-long {
+    top: 38px;
+    right: 8px;
+    width: 47px;
+    transform: rotate(-45deg);
+    animation: icon-line-long 0.75s;
+}
+
+@keyframes icon-line-tip {
+    0% { width: 0; left: 1px; top: 19px; }
+    54% { width: 0; left: 1px; top: 19px; }
+    70% { width: 50px; left: -8px; top: 37px; }
+    84% { width: 17px; left: 21px; top: 48px; }
+    100% { width: 25px; left: 14px; top: 46px; }
+}
+
+@keyframes icon-line-long {
+    0% { width: 0; right: 46px; top: 54px; }
+    65% { width: 0; right: 46px; top: 54px; }
+    84% { width: 55px; right: 0; top: 35px; }
+    100% { width: 47px; right: 8px; top: 38px; }
+}
+
+/* =====================================================
+   RIPPLE EFFECT
+   ===================================================== */
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* =====================================================
+   CUSTOM CURSOR (Desktop)
+   ===================================================== */
+.cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-yellow);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    mix-blend-mode: difference;
+}
+
+.cursor-follower .cursor-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-yellow);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+}
+
+.cursor-follower.hover {
+    width: 60px;
+    height: 60px;
+    background: rgba(252, 214, 0, 0.2);
+}
+
+.cursor-follower.hover .cursor-dot {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+/* Hide custom cursor on mobile */
+@media (max-width: 1024px) {
+    .cursor-follower {
+        display: none;
+    }
+}
+
+/* =====================================================
+   BUTTON SUCCESS STATE
+   ===================================================== */
+.btn-add-cart.success,
+.btn-add-to-cart.success {
+    background: var(--dark-green) !important;
+    color: white !important;
+}
+
+.btn-add-cart.success svg,
+.btn-add-to-cart.success svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    animation: checkmarkDraw 0.5s ease forwards;
+}
+
+@keyframes checkmarkDraw {
+    from {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* =====================================================
+   FOOTER TAG HOVER EFFECTS
+   ===================================================== */
+.footer-tag {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.footer-tag:hover {
+    background: var(--primary-yellow);
+    color: var(--text-dark);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(252, 214, 0, 0.3);
+}
+
+/* =====================================================
+   CART ITEMS ANIMATION
+   ===================================================== */
+.cart-table tr {
+    animation: slideInRight 0.4s ease-out;
+    animation-fill-mode: both;
+}
+
+.cart-table tr:nth-child(1) { animation-delay: 0.1s; }
+.cart-table tr:nth-child(2) { animation-delay: 0.2s; }
+.cart-table tr:nth-child(3) { animation-delay: 0.3s; }
+.cart-table tr:nth-child(4) { animation-delay: 0.4s; }
+.cart-table tr:nth-child(5) { animation-delay: 0.5s; }
+
+/* =====================================================
+   CHECKOUT FORM ANIMATIONS
+   ===================================================== */
+.checkout-section {
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.checkout-section:nth-child(1) { animation-delay: 0.1s; }
+.checkout-section:nth-child(2) { animation-delay: 0.2s; }
+.checkout-section:nth-child(3) { animation-delay: 0.3s; }
+
+.order-summary {
+    animation: slideInRight 0.6s ease-out 0.3s both;
+}
+
+/* =====================================================
+   FORM INPUT FOCUS ANIMATIONS
+   ===================================================== */
+.form-group {
+    position: relative;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    transform: translateY(-25px) scale(0.85);
+    color: var(--dark-green);
+}
+
+/* =====================================================
+   PAYMENT METHOD SELECTION
+   ===================================================== */
+.payment-method {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.payment-method:hover {
+    transform: translateX(5px);
+    border-color: var(--primary-yellow);
+}
+
+.payment-method.active {
+    border-color: var(--dark-green);
+    background: rgba(26, 79, 68, 0.05);
+}
+
+/* =====================================================
+   ORDER SUCCESS MODAL ANIMATION
+   ===================================================== */
+.modal-content {
+    animation: modalBounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes modalBounceIn {
+    0% { opacity: 0; transform: scale(0.5) translateY(-50px); }
+    70% { transform: scale(1.05) translateY(0); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* =====================================================
+   RELATED PRODUCTS SECTION
+   ===================================================== */
+.related-products-section {
+    animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+.related-products-title {
+    position: relative;
+    display: inline-block;
+}
+
+.related-products-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--primary-yellow);
+    animation: expandLine 0.8s ease-out 0.8s forwards;
+}
+
+@keyframes expandLine {
+    to { width: 100%; }
+}
+
+/* =====================================================
+   TEXT REVEAL ANIMATION
+   ===================================================== */
+.text-reveal {
+    overflow: hidden;
+}
+
+.text-reveal span {
+    display: inline-block;
+    transform: translateY(100%);
+    animation: textReveal 0.6s ease-out forwards;
+}
+
+@keyframes textReveal {
+    to { transform: translateY(0); }
+}
+
+/* =====================================================
+   IMAGE REVEAL ANIMATION
+   ===================================================== */
+.image-reveal {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-reveal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-yellow);
+    z-index: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+    animation: imageReveal 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes imageReveal {
+    to { transform: scaleX(0); }
+}
+
+/* =====================================================
+   STAGGERED LIST ANIMATION
+   ===================================================== */
+.stagger-list li {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: staggerIn 0.4s ease-out forwards;
+}
+
+.stagger-list li:nth-child(1) { animation-delay: 0.1s; }
+.stagger-list li:nth-child(2) { animation-delay: 0.15s; }
+.stagger-list li:nth-child(3) { animation-delay: 0.2s; }
+.stagger-list li:nth-child(4) { animation-delay: 0.25s; }
+.stagger-list li:nth-child(5) { animation-delay: 0.3s; }
+.stagger-list li:nth-child(6) { animation-delay: 0.35s; }
+
+@keyframes staggerIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =====================================================
+   HERO TEXT SPLIT ANIMATION
+   ===================================================== */
+.hero-title span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: wordFadeIn 0.5s ease-out forwards;
+}
+
+/* =====================================================
+   BORDER ANIMATION
+   ===================================================== */
+.border-animate {
+    position: relative;
+}
+
+.border-animate::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-yellow);
+    animation: borderGrow 1s ease-out forwards;
+}
+
+@keyframes borderGrow {
+    to { width: 100%; }
+}
+
+/* =====================================================
+   COUNT BADGE ANIMATION
+   ===================================================== */
+.cart-count {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.cart-count.updated {
+    animation: countPop 0.4s ease;
+}
+
+@keyframes countPop {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
