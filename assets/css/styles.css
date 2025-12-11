@@ -1967,39 +1967,46 @@ input, textarea, select {
     }
 
     /* =====================================================
-       MOBILE HERO - Clean & Impactful
+       MOBILE HERO - Full Screen Like Reference
        ===================================================== */
     .hero {
-        height: auto;
-        min-height: 380px;
-        padding: 50px 0;
+        height: 100vh;
+        min-height: 600px;
+        padding: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 60px;
     }
 
     .hero-content {
-        padding: 0 15px;
+        padding: 0 20px;
+        text-align: center;
     }
 
     .hero-subtitle {
-        font-size: 11px;
-        letter-spacing: 2px;
-        margin-bottom: 12px;
+        font-size: 12px;
+        letter-spacing: 4px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
     }
 
     .hero-title {
-        font-size: 28px;
-        line-height: 1.25;
-        margin-bottom: 15px;
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        font-weight: 800;
+        font-style: italic;
     }
 
     .hero-text {
-        font-size: 14px;
-        margin-bottom: 25px;
-        line-height: 1.6;
+        display: none;
     }
 
     .btn {
-        padding: 12px 28px;
-        font-size: 11px;
+        padding: 14px 40px;
+        font-size: 12px;
+        font-weight: 700;
     }
 
     /* =====================================================
@@ -2530,30 +2537,30 @@ input, textarea, select {
        EXTRA SMALL MOBILE - Hero
        ===================================================== */
     .hero {
-        min-height: 320px;
-        padding: 40px 0;
+        height: 100vh;
+        min-height: 550px;
+        padding-bottom: 50px;
     }
 
     .hero-subtitle {
-        font-size: 10px;
-        letter-spacing: 1.5px;
-        margin-bottom: 10px;
+        font-size: 11px;
+        letter-spacing: 3px;
+        margin-bottom: 8px;
     }
 
     .hero-title {
-        font-size: 24px;
-        line-height: 1.2;
-        margin-bottom: 12px;
+        font-size: 28px;
+        line-height: 1.15;
+        margin-bottom: 18px;
     }
 
     .hero-text {
-        font-size: 13px;
-        margin-bottom: 20px;
+        display: none;
     }
 
     .btn {
-        padding: 11px 24px;
-        font-size: 10px;
+        padding: 12px 35px;
+        font-size: 11px;
     }
 
     /* =====================================================
