@@ -1,1064 +1,1242 @@
 /**
- * Unity Appliances - Main JavaScript
- * Complete E-commerce functionality with cart system
+ * =====================================================
+ * UNITY APPLIANCES - Main JavaScript
+ * Complete E-commerce Functionality with localStorage
+ * =====================================================
  */
 
-(function() {
-    'use strict';
+// =====================================================
+// PRODUCT DATA (Mock Database)
+// =====================================================
+const productsData = [
+    // Fridges
+    {
+        id: 1,
+        name: "Double Door Refrigerator 260L",
+        category: "Fridges",
+        oldPrice: 28000,
+        price: 18500,
+        badge: "sale",
+        condition: "Refurbished",
+        brand: "Unity Brand",
+        capacity: "260 Liters",
+        rating: 5,
+        image: "",
+        description: "Energy efficient double door refrigerator with frost-free technology. Perfect for medium-sized families."
+    },
+    {
+        id: 2,
+        name: "Single Door Refrigerator 180L",
+        category: "Fridges",
+        oldPrice: 18000,
+        price: 12500,
+        badge: "used",
+        condition: "Used - Good",
+        brand: "Unity Brand",
+        capacity: "180 Liters",
+        rating: 4,
+        image: "",
+        description: "Compact single door refrigerator ideal for small families or bachelor accommodations."
+    },
+    {
+        id: 3,
+        name: "Side by Side Refrigerator 550L",
+        category: "Fridges",
+        oldPrice: 65000,
+        price: 42000,
+        badge: "sale",
+        condition: "Refurbished",
+        brand: "Unity Premium",
+        capacity: "550 Liters",
+        rating: 5,
+        image: "",
+        description: "Premium side by side refrigerator with water dispenser and ice maker."
+    },
+    // ACs
+    {
+        id: 4,
+        name: "Split AC 1.5 Ton 3 Star",
+        category: "ACs",
+        oldPrice: 35000,
+        price: 22500,
+        badge: "sale",
+        condition: "Refurbished",
+        brand: "Unity Cool",
+        capacity: "1.5 Ton",
+        rating: 5,
+        image: "",
+        description: "Energy efficient split AC with fast cooling technology. Suitable for rooms up to 180 sq ft."
+    },
+    {
+        id: 5,
+        name: "Window AC 1 Ton",
+        category: "ACs",
+        oldPrice: 22000,
+        price: 14500,
+        badge: "used",
+        condition: "Used - Good",
+        brand: "Unity Cool",
+        capacity: "1 Ton",
+        rating: 4,
+        image: "",
+        description: "Compact window AC perfect for small rooms. Easy installation and maintenance."
+    },
+    {
+        id: 6,
+        name: "Inverter Split AC 2 Ton 5 Star",
+        category: "ACs",
+        oldPrice: 55000,
+        price: 38000,
+        badge: "sale",
+        condition: "Refurbished",
+        brand: "Unity Premium",
+        capacity: "2 Ton",
+        rating: 5,
+        image: "",
+        description: "Premium inverter AC with 5 star rating. Ultra energy efficient with silent operation."
+    },
+    // Washing Machines
+    {
+        id: 7,
+        name: "Front Load Washing Machine 7kg",
+        category: "Washing Machines",
+        oldPrice: 32000,
+        price: 21500,
+        badge: "sale",
+        condition: "Refurbished",
+        brand: "Unity Wash",
+        capacity: "7 kg",
+        rating: 5,
+        image: "",
+        description: "Fully automatic front load washing machine with multiple wash programs."
+    },
+    {
+        id: 8,
+        name: "Top Load Washing Machine 6.5kg",
+        category: "Washing Machines",
+        oldPrice: 18000,
+        price: 11500,
+        badge: "used",
+        condition: "Used - Good",
+        brand: "Unity Wash",
+        capacity: "6.5 kg",
+        rating: 4,
+        image: "",
+        description: "Semi-automatic top load washing machine. Budget friendly option for daily use."
+    },
+    {
+        id: 9,
+        name: "Fully Automatic Top Load 8kg",
+        category: "Washing Machines",
+        oldPrice: 28000,
+        price: 19500,
+        badge: "sale",
+        condition: "Refurbished",
+        brand: "Unity Premium",
+        capacity: "8 kg",
+        rating: 5,
+        image: "",
+        description: "Large capacity fully automatic washing machine with digital display and multiple programs."
+    },
+    // Ovens
+    {
+        id: 10,
+        name: "Microwave Oven 20L",
+        category: "Ovens",
+        oldPrice: 8000,
+        price: 5500,
+        badge: "sale",
+        condition: "Refurbished",
+        brand: "Unity Kitchen",
+        capacity: "20 Liters",
+        rating: 4,
+        image: "",
+        description: "Solo microwave oven perfect for reheating and basic cooking needs."
+    },
+    {
+        id: 11,
+        name: "Convection Microwave 28L",
+        category: "Ovens",
+        oldPrice: 15000,
+        price: 9500,
+        badge: "used",
+        condition: "Used - Good",
+        brand: "Unity Kitchen",
+        capacity: "28 Liters",
+        rating: 4,
+        image: "",
+        description: "Convection microwave with grill function. Ideal for baking and grilling."
+    },
+    {
+        id: 12,
+        name: "OTG Oven 30L",
+        category: "Ovens",
+        oldPrice: 12000,
+        price: 7500,
+        badge: "sale",
+        condition: "Refurbished",
+        brand: "Unity Premium",
+        capacity: "30 Liters",
+        rating: 5,
+        image: "",
+        description: "Oven Toaster Griller with rotisserie function. Perfect for home baking enthusiasts."
+    },
+    // Spare Parts
+    {
+        id: 13,
+        name: "Fridge Compressor Universal",
+        category: "Spare Parts",
+        oldPrice: 4500,
+        price: 3200,
+        badge: "new",
+        condition: "New",
+        brand: "Unity Parts",
+        capacity: "Universal",
+        rating: 5,
+        image: "",
+        description: "High quality universal compressor compatible with most refrigerator brands."
+    },
+    {
+        id: 14,
+        name: "AC Gas Refill Service",
+        category: "Spare Parts",
+        oldPrice: 2500,
+        price: 1800,
+        badge: "sale",
+        condition: "Service",
+        brand: "Unity Service",
+        capacity: "R22/R32/R410",
+        rating: 5,
+        image: "",
+        description: "Professional AC gas refill service with leak testing and performance check."
+    },
+    {
+        id: 15,
+        name: "Washing Machine Motor",
+        category: "Spare Parts",
+        oldPrice: 3500,
+        price: 2500,
+        badge: "new",
+        condition: "New",
+        brand: "Unity Parts",
+        capacity: "Universal",
+        rating: 4,
+        image: "",
+        description: "Replacement motor for semi-automatic washing machines. Easy installation."
+    },
+    {
+        id: 16,
+        name: "Microwave Magnetron",
+        category: "Spare Parts",
+        oldPrice: 2800,
+        price: 1950,
+        badge: "new",
+        condition: "New",
+        brand: "Unity Parts",
+        capacity: "Universal",
+        rating: 4,
+        image: "",
+        description: "Replacement magnetron for microwave ovens. Professional installation recommended."
+    }
+];
 
-    // ========================================
-    // Product Data (Mock Database)
-    // ========================================
-    const productsData = [
-        {
-            id: 1,
-            name: 'Samsung Double Door Refrigerator',
-            category: 'Fridges',
-            price: 18999,
-            oldPrice: 24999,
-            badge: 'sale',
-            condition: 'Refurbished',
-            description: 'Excellent condition Samsung 253L Double Door Refrigerator with Digital Inverter Technology. Fully serviced with 6-month warranty.'
-        },
-        {
-            id: 2,
-            name: 'LG 1.5 Ton Split AC',
-            category: 'ACs',
-            price: 22999,
-            oldPrice: 32000,
-            badge: 'sale',
-            condition: 'Used',
-            description: 'LG 1.5 Ton 3 Star Split AC in good working condition. Copper condenser with R32 refrigerant. Includes installation support.'
-        },
-        {
-            id: 3,
-            name: 'Whirlpool Front Load Washing Machine',
-            category: 'Washing Machines',
-            price: 14999,
-            oldPrice: 19999,
-            badge: 'refurbished',
-            condition: 'Refurbished',
-            description: 'Whirlpool 7kg Front Load Washing Machine with 6th Sense Technology. Professionally refurbished with new drum bearings.'
-        },
-        {
-            id: 4,
-            name: 'IFB Microwave Oven 25L',
-            category: 'Ovens',
-            price: 6999,
-            oldPrice: 9999,
-            badge: 'used',
-            condition: 'Used',
-            description: 'IFB 25L Convection Microwave Oven with multi-stage cooking. Perfect working condition with all accessories included.'
-        },
-        {
-            id: 5,
-            name: 'Godrej Deep Freezer 300L',
-            category: 'Fridges',
-            price: 12999,
-            oldPrice: 18000,
-            badge: 'sale',
-            condition: 'Used',
-            description: 'Godrej 300L Hard Top Deep Freezer ideal for shops and commercial use. Energy efficient with fast freezing technology.'
-        },
-        {
-            id: 6,
-            name: 'Voltas 1 Ton Window AC',
-            category: 'ACs',
-            price: 9999,
-            oldPrice: 14999,
-            badge: 'used',
-            condition: 'Used',
-            description: 'Voltas 1 Ton 3 Star Window AC. Great cooling performance, ideal for small rooms. Includes free installation.'
-        },
-        {
-            id: 7,
-            name: 'Bosch Semi-Automatic Washing Machine',
-            category: 'Washing Machines',
-            price: 8999,
-            oldPrice: 12999,
-            badge: 'refurbished',
-            condition: 'Refurbished',
-            description: 'Bosch 7.5kg Semi-Automatic Top Load Washing Machine. Dual wash technology with powerful motor.'
-        },
-        {
-            id: 8,
-            name: 'Samsung Convection Microwave 28L',
-            category: 'Ovens',
-            price: 8499,
-            oldPrice: 12000,
-            badge: 'sale',
-            condition: 'Refurbished',
-            description: 'Samsung 28L Convection Microwave with ceramic cavity. Slim fry technology for healthy cooking.'
-        },
-        {
-            id: 9,
-            name: 'Haier Single Door Refrigerator',
-            category: 'Fridges',
-            price: 7999,
-            oldPrice: 11999,
-            badge: 'used',
-            condition: 'Used',
-            description: 'Haier 195L Direct Cool Single Door Refrigerator. Diamond edge freezing for faster ice making.'
-        },
-        {
-            id: 10,
-            name: 'Blue Star 2 Ton Split AC',
-            category: 'ACs',
-            price: 28999,
-            oldPrice: 42000,
-            badge: 'sale',
-            condition: 'Refurbished',
-            description: 'Blue Star 2 Ton Inverter Split AC. Precision cooling with 5 in 1 convertible mode. Like new condition.'
-        },
-        {
-            id: 11,
-            name: 'LG Top Load Washing Machine 8kg',
-            category: 'Washing Machines',
-            price: 11999,
-            oldPrice: 16999,
-            badge: 'sale',
-            condition: 'Used',
-            description: 'LG 8kg Top Load Washing Machine with TurboDrum technology. Smart inverter for energy savings.'
-        },
-        {
-            id: 12,
-            name: 'Morphy Richards OTG 40L',
-            category: 'Ovens',
-            price: 4999,
-            oldPrice: 7999,
-            badge: 'used',
-            condition: 'Used',
-            description: 'Morphy Richards 40L OTG with convection and rotisserie. Perfect for baking, grilling and toasting.'
-        },
-        {
-            id: 13,
-            name: 'Compressor for Refrigerator',
-            category: 'Spare Parts',
-            price: 2999,
-            oldPrice: 4500,
-            badge: 'new',
-            condition: 'New',
-            description: 'Brand new replacement compressor compatible with most single and double door refrigerators.'
-        },
-        {
-            id: 14,
-            name: 'AC Outdoor Unit Fan Motor',
-            category: 'Spare Parts',
-            price: 1499,
-            oldPrice: 2500,
-            badge: 'new',
-            condition: 'New',
-            description: 'Universal outdoor unit fan motor for split ACs. Easy to install with 1 year warranty.'
-        },
-        {
-            id: 15,
-            name: 'Washing Machine Drain Pump',
-            category: 'Spare Parts',
-            price: 899,
-            oldPrice: 1500,
-            badge: 'new',
-            condition: 'New',
-            description: 'High quality drain pump compatible with front load washing machines. Fast drainage guaranteed.'
-        },
-        {
-            id: 16,
-            name: 'Microwave Magnetron',
-            category: 'Spare Parts',
-            price: 1999,
-            oldPrice: 3000,
-            badge: 'new',
-            condition: 'New',
-            description: 'Replacement magnetron for microwave ovens. Universal fit for most brands.'
-        }
-    ];
+// =====================================================
+// CART MANAGEMENT (localStorage)
+// =====================================================
+const Cart = {
+    // Get cart from localStorage
+    getCart() {
+        const cart = localStorage.getItem('unityCart');
+        return cart ? JSON.parse(cart) : [];
+    },
 
-    // ========================================
-    // Cart Management (LocalStorage)
-    // ========================================
-    const Cart = {
-        getCart: function() {
-            const cart = localStorage.getItem('unityCart');
-            return cart ? JSON.parse(cart) : [];
-        },
+    // Save cart to localStorage
+    saveCart(cart) {
+        localStorage.setItem('unityCart', JSON.stringify(cart));
+        this.updateCartCount();
+    },
 
-        saveCart: function(cart) {
-            localStorage.setItem('unityCart', JSON.stringify(cart));
-            this.updateCartCount();
-        },
+    // Add item to cart
+    addItem(productId, quantity = 1) {
+        const cart = this.getCart();
+        const product = productsData.find(p => p.id === productId);
 
-        addItem: function(productId, quantity = 1) {
-            const cart = this.getCart();
-            const product = productsData.find(p => p.id === productId);
+        if (!product) return false;
 
-            if (!product) return false;
+        const existingItem = cart.find(item => item.id === productId);
 
-            const existingItem = cart.find(item => item.id === productId);
-
-            if (existingItem) {
-                existingItem.quantity += quantity;
-            } else {
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    oldPrice: product.oldPrice,
-                    category: product.category,
-                    quantity: quantity
-                });
-            }
-
-            this.saveCart(cart);
-            this.showNotification(`${product.name} added to cart!`);
-            return true;
-        },
-
-        removeItem: function(productId) {
-            let cart = this.getCart();
-            cart = cart.filter(item => item.id !== productId);
-            this.saveCart(cart);
-        },
-
-        updateQuantity: function(productId, quantity) {
-            const cart = this.getCart();
-            const item = cart.find(item => item.id === productId);
-
-            if (item) {
-                if (quantity <= 0) {
-                    this.removeItem(productId);
-                } else {
-                    item.quantity = quantity;
-                    this.saveCart(cart);
-                }
-            }
-        },
-
-        getTotal: function() {
-            const cart = this.getCart();
-            return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-        },
-
-        getItemCount: function() {
-            const cart = this.getCart();
-            return cart.reduce((count, item) => count + item.quantity, 0);
-        },
-
-        clearCart: function() {
-            localStorage.removeItem('unityCart');
-            this.updateCartCount();
-        },
-
-        updateCartCount: function() {
-            const count = this.getItemCount();
-            const cartCountElements = document.querySelectorAll('.cart-count');
-            cartCountElements.forEach(el => {
-                el.textContent = count;
-                el.style.display = count > 0 ? 'flex' : 'none';
+        if (existingItem) {
+            existingItem.quantity += quantity;
+        } else {
+            cart.push({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                oldPrice: product.oldPrice,
+                category: product.category,
+                quantity: quantity
             });
-        },
-
-        showNotification: function(message, type = 'success') {
-            // Remove existing notification
-            const existing = document.querySelector('.notification');
-            if (existing) existing.remove();
-
-            // Create notification
-            const notification = document.createElement('div');
-            notification.className = `notification ${type}`;
-            notification.innerHTML = `
-                <span>${message}</span>
-            `;
-            document.body.appendChild(notification);
-
-            // Show notification
-            setTimeout(() => notification.classList.add('show'), 10);
-
-            // Hide after 3 seconds
-            setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => notification.remove(), 300);
-            }, 3000);
         }
-    };
 
-    // ========================================
-    // DOM Elements
-    // ========================================
+        this.saveCart(cart);
+        this.showNotification(`${product.name} added to cart!`);
+        return true;
+    },
+
+    // Remove item from cart
+    removeItem(productId) {
+        let cart = this.getCart();
+        cart = cart.filter(item => item.id !== productId);
+        this.saveCart(cart);
+    },
+
+    // Update item quantity
+    updateQuantity(productId, quantity) {
+        const cart = this.getCart();
+        const item = cart.find(item => item.id === productId);
+
+        if (item) {
+            item.quantity = Math.max(1, quantity);
+            this.saveCart(cart);
+        }
+    },
+
+    // Get cart total
+    getTotal() {
+        const cart = this.getCart();
+        return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+    },
+
+    // Get cart item count
+    getItemCount() {
+        const cart = this.getCart();
+        return cart.reduce((count, item) => count + item.quantity, 0);
+    },
+
+    // Update cart count display
+    updateCartCount() {
+        const cartCounts = document.querySelectorAll('.cart-count');
+        const count = this.getItemCount();
+        cartCounts.forEach(el => {
+            el.textContent = count;
+        });
+    },
+
+    // Clear cart
+    clearCart() {
+        localStorage.removeItem('unityCart');
+        this.updateCartCount();
+    },
+
+    // Show notification
+    showNotification(message, type = 'success') {
+        // Remove existing notification
+        const existingNotification = document.querySelector('.notification');
+        if (existingNotification) {
+            existingNotification.remove();
+        }
+
+        // Create new notification
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>${message}</span>
+        `;
+        document.body.appendChild(notification);
+
+        // Show notification
+        setTimeout(() => notification.classList.add('show'), 100);
+
+        // Hide notification after 3 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+    }
+};
+
+// =====================================================
+// DOM READY - Initialize everything
+// =====================================================
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize cart count
+    Cart.updateCartCount();
+
+    // Initialize all features
+    initStickyHeader();
+    initMobileMenu();
+    initSearchOverlay();
+    initShopPage();
+    initProductPage();
+    initCartPage();
+    initCheckoutPage();
+    initAccountPage();
+    initProductCards();
+    initTopRatedProducts();
+    initScrollAnimations();
+});
+
+// =====================================================
+// STICKY HEADER
+// =====================================================
+function initStickyHeader() {
     const header = document.querySelector('.main-header');
+    if (!header) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+}
+
+// =====================================================
+// MOBILE MENU
+// =====================================================
+function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
     const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
     const mobileMenuClose = document.querySelector('.mobile-menu-close');
+
+    if (!menuToggle || !mobileMenu) return;
+
+    function openMenu() {
+        mobileMenu.classList.add('active');
+        mobileMenuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    menuToggle.addEventListener('click', openMenu);
+    mobileMenuClose?.addEventListener('click', closeMenu);
+    mobileMenuOverlay?.addEventListener('click', closeMenu);
+}
+
+// =====================================================
+// SEARCH OVERLAY
+// =====================================================
+function initSearchOverlay() {
     const searchIcon = document.querySelector('.search-icon');
     const searchOverlay = document.querySelector('.search-overlay');
     const searchClose = document.querySelector('.search-close');
 
-    // ========================================
-    // Mobile Navigation
-    // ========================================
-    function initMobileNav() {
-        if (!menuToggle) return;
+    if (!searchIcon || !searchOverlay) return;
 
-        menuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            if (mobileMenu) mobileMenu.classList.toggle('active');
-            if (mobileMenuOverlay) mobileMenuOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileMenu?.classList.contains('active') ? 'hidden' : '';
-        });
+    searchIcon.addEventListener('click', () => {
+        searchOverlay.classList.add('active');
+        const input = searchOverlay.querySelector('input');
+        if (input) input.focus();
+    });
 
-        if (mobileMenuClose) {
-            mobileMenuClose.addEventListener('click', closeMobileMenu);
+    searchClose?.addEventListener('click', () => {
+        searchOverlay.classList.remove('active');
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+            searchOverlay.classList.remove('active');
         }
+    });
+}
 
-        if (mobileMenuOverlay) {
-            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-        }
+// =====================================================
+// SHOP PAGE FUNCTIONALITY
+// =====================================================
+function initShopPage() {
+    const shopGrid = document.getElementById('shopProductsGrid');
+    if (!shopGrid) return;
+
+    // State management
+    let currentCategory = 'all';
+    let currentSort = 'default';
+    let minPrice = 0;
+    let maxPrice = 50000;
+    let searchQuery = '';
+
+    // Get URL params for category filter
+    const urlParams = new URLSearchParams(window.location.search);
+    const catParam = urlParams.get('cat');
+    if (catParam) {
+        currentCategory = catParam;
     }
 
-    function closeMobileMenu() {
-        if (menuToggle) menuToggle.classList.remove('active');
-        if (mobileMenu) mobileMenu.classList.remove('active');
-        if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+    // Initialize category filter
+    initCategoryFilter();
 
-    // ========================================
-    // Sticky Header
-    // ========================================
-    function initStickyHeader() {
-        if (!header) return;
+    // Initialize price slider
+    initPriceSlider();
 
-        let lastScrollY = window.scrollY;
-        let ticking = false;
+    // Initialize search
+    initSidebarSearch();
 
-        function updateHeader() {
-            const scrollY = window.scrollY;
+    // Initialize sort
+    initShopSort();
 
-            if (scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+    // Render products
+    renderProducts();
+
+    // Category filter
+    function initCategoryFilter() {
+        const categoryLinks = document.querySelectorAll('.sidebar-category');
+        categoryLinks.forEach(link => {
+            // Set active state based on current category
+            if (link.dataset.category === currentCategory) {
+                link.classList.add('active');
             }
 
-            lastScrollY = scrollY;
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                window.requestAnimationFrame(updateHeader);
-                ticking = true;
-            }
-        });
-    }
-
-    // ========================================
-    // Search Overlay
-    // ========================================
-    function initSearchOverlay() {
-        if (searchIcon && searchOverlay) {
-            searchIcon.addEventListener('click', function() {
-                searchOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                searchOverlay.querySelector('input')?.focus();
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                categoryLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                currentCategory = link.dataset.category;
+                renderProducts();
             });
-        }
-
-        if (searchClose && searchOverlay) {
-            searchClose.addEventListener('click', function() {
-                searchOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        }
-
-        // Close on escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && searchOverlay?.classList.contains('active')) {
-                searchOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
         });
     }
 
-    // ========================================
-    // Product Grid Rendering
-    // ========================================
-    function renderProducts(containerId, products, limit = null) {
-        const container = document.getElementById(containerId);
-        if (!container) return;
+    // Price slider
+    function initPriceSlider() {
+        const sliderMin = document.getElementById('priceSliderMin');
+        const sliderMax = document.getElementById('priceSliderMax');
+        const priceDisplay = document.getElementById('priceRangeDisplay');
+        const sliderTrack = document.getElementById('priceSliderTrack');
+        const applyBtn = document.getElementById('applyPriceFilter');
 
-        const displayProducts = limit ? products.slice(0, limit) : products;
+        if (!sliderMin || !sliderMax) return;
 
-        container.innerHTML = displayProducts.map(product => `
-            <div class="product-card" data-id="${product.id}">
-                <span class="product-badge badge-${product.badge}">${product.badge}</span>
-                <div class="product-image">
-                    <div class="product-placeholder">
-                        ${getCategoryIcon(product.category)}
-                    </div>
-                    <div class="product-actions">
-                        <button class="product-action-btn quick-view-btn" data-id="${product.id}" title="Quick View">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <p class="product-category">${product.category}</p>
-                    <h3 class="product-title">
-                        <a href="shop.html">${product.name}</a>
-                    </h3>
-                    <div class="product-price">
-                        ${product.oldPrice ? `<span class="price-old">₹${product.oldPrice.toLocaleString()}</span>` : ''}
-                        <span class="price-current">₹${product.price.toLocaleString()}</span>
-                    </div>
-                    <button class="btn-add-cart" data-id="${product.id}">Add to Cart</button>
+        function updateSlider() {
+            const min = parseInt(sliderMin.value);
+            const max = parseInt(sliderMax.value);
+
+            if (min > max) {
+                sliderMin.value = max;
+            }
+
+            minPrice = parseInt(sliderMin.value);
+            maxPrice = parseInt(sliderMax.value);
+
+            // Update display
+            if (priceDisplay) {
+                priceDisplay.textContent = `Rs ${minPrice.toLocaleString()} - Rs ${maxPrice.toLocaleString()}`;
+            }
+
+            // Update track
+            if (sliderTrack) {
+                const percent1 = (minPrice / 50000) * 100;
+                const percent2 = (maxPrice / 50000) * 100;
+                sliderTrack.style.left = percent1 + '%';
+                sliderTrack.style.width = (percent2 - percent1) + '%';
+            }
+        }
+
+        sliderMin.addEventListener('input', updateSlider);
+        sliderMax.addEventListener('input', updateSlider);
+
+        applyBtn?.addEventListener('click', () => {
+            renderProducts();
+        });
+
+        // Initialize
+        updateSlider();
+    }
+
+    // Sidebar search
+    function initSidebarSearch() {
+        const searchInput = document.getElementById('sidebarSearchInput');
+        const searchBtn = document.getElementById('sidebarSearchBtn');
+
+        if (!searchInput) return;
+
+        function doSearch() {
+            searchQuery = searchInput.value.trim().toLowerCase();
+            renderProducts();
+        }
+
+        searchBtn?.addEventListener('click', doSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') doSearch();
+        });
+    }
+
+    // Sort functionality
+    function initShopSort() {
+        const sortSelect = document.getElementById('shopSort');
+        if (!sortSelect) return;
+
+        sortSelect.addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            renderProducts();
+        });
+    }
+
+    // Render products with filters
+    function renderProducts() {
+        let filtered = [...productsData];
+
+        // Category filter
+        if (currentCategory !== 'all') {
+            filtered = filtered.filter(p => p.category === currentCategory);
+        }
+
+        // Price filter
+        filtered = filtered.filter(p => p.price >= minPrice && p.price <= maxPrice);
+
+        // Search filter
+        if (searchQuery) {
+            filtered = filtered.filter(p =>
+                p.name.toLowerCase().includes(searchQuery) ||
+                p.category.toLowerCase().includes(searchQuery)
+            );
+        }
+
+        // Sort
+        switch (currentSort) {
+            case 'price-low':
+                filtered.sort((a, b) => a.price - b.price);
+                break;
+            case 'price-high':
+                filtered.sort((a, b) => b.price - a.price);
+                break;
+            case 'name':
+                filtered.sort((a, b) => a.name.localeCompare(b.name));
+                break;
+        }
+
+        // Update result count
+        const resultCount = document.getElementById('resultCount');
+        if (resultCount) {
+            resultCount.textContent = `Showing all ${filtered.length} products`;
+        }
+
+        // Render products
+        shopGrid.innerHTML = filtered.map(product => createProductCard(product)).join('');
+
+        // Re-initialize product card events
+        initProductCardEvents();
+    }
+}
+
+// =====================================================
+// CREATE PRODUCT CARD HTML
+// =====================================================
+function createProductCard(product) {
+    const badgeClass = {
+        'sale': 'badge-sale',
+        'used': 'badge-used',
+        'refurbished': 'badge-refurbished',
+        'new': 'badge-new'
+    }[product.badge] || 'badge-sale';
+
+    const badgeText = product.badge.charAt(0).toUpperCase() + product.badge.slice(1);
+
+    return `
+        <div class="product-card" data-product-id="${product.id}" data-product-url="product.html?id=${product.id}">
+            <span class="product-badge ${badgeClass}">${badgeText}</span>
+            <div class="product-image">
+                <div class="product-placeholder">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
                 </div>
             </div>
-        `).join('');
-
-        // Add event listeners
-        container.querySelectorAll('.btn-add-cart').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const productId = parseInt(this.dataset.id);
-                Cart.addItem(productId);
-            });
-        });
-
-        container.querySelectorAll('.quick-view-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const productId = parseInt(this.dataset.id);
-                openQuickView(productId);
-            });
-        });
-    }
-
-    function getCategoryIcon(category) {
-        const icons = {
-            'Fridges': `<svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                <line x1="4" y1="10" x2="20" y2="10"></line>
-                <line x1="8" y1="6" x2="8" y2="6.01"></line>
-                <line x1="8" y1="14" x2="8" y2="14.01"></line>
-            </svg>`,
-            'ACs': `<svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="4" width="20" height="10" rx="2"></rect>
-                <path d="M6 18v-4"></path>
-                <path d="M10 18v-4"></path>
-                <path d="M14 18v-4"></path>
-                <path d="M18 18v-4"></path>
-            </svg>`,
-            'Washing Machines': `<svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                <circle cx="12" cy="14" r="4"></circle>
-                <circle cx="8" cy="6" r="1"></circle>
-                <circle cx="12" cy="6" r="1"></circle>
-            </svg>`,
-            'Ovens': `<svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                <rect x="6" y="8" width="12" height="8" rx="1"></rect>
-                <line x1="6" y1="4" x2="6" y2="4.01"></line>
-                <line x1="10" y1="4" x2="10" y2="4.01"></line>
-            </svg>`,
-            'Spare Parts': `<svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-            </svg>`
-        };
-        return icons[category] || icons['Spare Parts'];
-    }
-
-    // ========================================
-    // Quick View Modal
-    // ========================================
-    function openQuickView(productId) {
-        const product = productsData.find(p => p.id === productId);
-        if (!product) return;
-
-        // Remove existing modal
-        const existingModal = document.querySelector('.modal-overlay');
-        if (existingModal) existingModal.remove();
-
-        // Create modal
-        const modal = document.createElement('div');
-        modal.className = 'modal-overlay';
-        modal.innerHTML = `
-            <div class="modal-content">
-                <button class="modal-close">&times;</button>
-                <div class="modal-body">
-                    <div class="modal-image">
-                        ${getCategoryIcon(product.category)}
-                    </div>
-                    <div class="modal-info">
-                        <p class="product-category">${product.category}</p>
-                        <h3>${product.name}</h3>
-                        <div class="product-price">
-                            ${product.oldPrice ? `<span class="price-old">₹${product.oldPrice.toLocaleString()}</span>` : ''}
-                            <span class="price-current">₹${product.price.toLocaleString()}</span>
-                        </div>
-                        <p>${product.description}</p>
-                        <p><strong>Condition:</strong> ${product.condition}</p>
-                        <div class="modal-quantity">
-                            <label>Quantity:</label>
-                            <div class="cart-quantity">
-                                <button class="qty-minus">-</button>
-                                <input type="number" value="1" min="1" max="10" class="qty-input">
-                                <button class="qty-plus">+</button>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary modal-add-cart" data-id="${product.id}">Add to Cart</button>
-                    </div>
+            <div class="product-info">
+                <p class="product-category">${product.category}</p>
+                <h3 class="product-title">${product.name}</h3>
+                <div class="product-price">
+                    <span class="price-old">Rs ${product.oldPrice.toLocaleString()}</span>
+                    <span class="price-current">Rs ${product.price.toLocaleString()}</span>
                 </div>
+                <button class="btn-add-cart" data-product-id="${product.id}">Add to Cart</button>
+            </div>
+        </div>
+    `;
+}
+
+// =====================================================
+// INITIALIZE PRODUCT CARD EVENTS
+// =====================================================
+function initProductCardEvents() {
+    // Add to cart buttons
+    document.querySelectorAll('.btn-add-cart').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent card click when clicking Add to Cart
+            const productId = parseInt(btn.dataset.productId);
+            Cart.addItem(productId, 1);
+        });
+    });
+
+    // Make entire product card clickable
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Don't navigate if clicking the Add to Cart button
+            if (e.target.closest('.btn-add-cart')) {
+                return;
+            }
+            const productUrl = card.dataset.productUrl;
+            if (productUrl) {
+                window.location.href = productUrl;
+            }
+        });
+    });
+}
+
+// =====================================================
+// INITIALIZE ALL PRODUCT CARDS ON PAGE
+// =====================================================
+function initProductCards() {
+    // Initialize add to cart for all product cards
+    initProductCardEvents();
+
+    // Render home page products if on index page
+    const homeProductGrid = document.querySelector('.section .products-grid:not(.products-grid-shop)');
+    if (homeProductGrid && !document.getElementById('shopProductsGrid')) {
+        // Show featured products on home page
+        const featuredProducts = productsData.slice(0, 8);
+        homeProductGrid.innerHTML = featuredProducts.map(product => createProductCard(product)).join('');
+        initProductCardEvents();
+    }
+}
+
+// =====================================================
+// PRODUCT DETAIL PAGE
+// =====================================================
+function initProductPage() {
+    const productTitle = document.getElementById('productTitle');
+    if (!productTitle) return;
+
+    // Get product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('id'));
+
+    if (!productId) {
+        productTitle.textContent = 'Product Not Found';
+        return;
+    }
+
+    const product = productsData.find(p => p.id === productId);
+    if (!product) {
+        productTitle.textContent = 'Product Not Found';
+        return;
+    }
+
+    // Populate product details
+    document.title = `${product.name} | Unity Appliances`;
+    productTitle.textContent = product.name;
+
+    const breadcrumb = document.getElementById('breadcrumbProductName');
+    if (breadcrumb) breadcrumb.textContent = product.name;
+
+    const oldPrice = document.getElementById('productOldPrice');
+    if (oldPrice) oldPrice.textContent = `Rs ${product.oldPrice.toLocaleString()}`;
+
+    const currentPrice = document.getElementById('productCurrentPrice');
+    if (currentPrice) currentPrice.textContent = `Rs ${product.price.toLocaleString()}`;
+
+    const brand = document.getElementById('productBrand');
+    if (brand) brand.textContent = product.brand;
+
+    const capacity = document.getElementById('productCapacity');
+    if (capacity) capacity.textContent = product.capacity;
+
+    const condition = document.getElementById('productCondition');
+    if (condition) condition.textContent = product.condition;
+
+    const categoryLink = document.getElementById('productCategoryLink');
+    if (categoryLink) {
+        categoryLink.textContent = product.category;
+        categoryLink.href = `shop.html?cat=${encodeURIComponent(product.category)}`;
+    }
+
+    const badge = document.getElementById('productBadge');
+    if (badge) {
+        badge.textContent = product.badge.charAt(0).toUpperCase() + product.badge.slice(1);
+        badge.className = `product-badge badge-${product.badge}`;
+    }
+
+    // Product image placeholder
+    const mainImage = document.getElementById('productMainImage');
+    if (mainImage) {
+        mainImage.innerHTML = `
+            <div class="product-image-placeholder">
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <span>${product.category}</span>
             </div>
         `;
+    }
 
-        document.body.appendChild(modal);
-        document.body.style.overflow = 'hidden';
+    // Quantity selector
+    initQuantitySelector();
 
-        // Show modal
-        setTimeout(() => modal.classList.add('active'), 10);
-
-        // Event listeners
-        const closeBtn = modal.querySelector('.modal-close');
-        const qtyMinus = modal.querySelector('.qty-minus');
-        const qtyPlus = modal.querySelector('.qty-plus');
-        const qtyInput = modal.querySelector('.qty-input');
-        const addCartBtn = modal.querySelector('.modal-add-cart');
-
-        closeBtn.addEventListener('click', () => closeModal(modal));
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal(modal);
-        });
-
-        qtyMinus.addEventListener('click', () => {
-            const current = parseInt(qtyInput.value);
-            if (current > 1) qtyInput.value = current - 1;
-        });
-
-        qtyPlus.addEventListener('click', () => {
-            const current = parseInt(qtyInput.value);
-            if (current < 10) qtyInput.value = current + 1;
-        });
-
-        addCartBtn.addEventListener('click', () => {
-            const quantity = parseInt(qtyInput.value);
-            Cart.addItem(productId, quantity);
-            closeModal(modal);
+    // Add to cart button
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    if (addToCartBtn) {
+        addToCartBtn.dataset.productId = productId;
+        addToCartBtn.addEventListener('click', () => {
+            const qty = parseInt(document.getElementById('productQty')?.value || 1);
+            Cart.addItem(productId, qty);
         });
     }
 
-    function closeModal(modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-        setTimeout(() => modal.remove(), 300);
-    }
+    // Initialize tabs
+    initProductTabs();
 
-    // ========================================
-    // Cart Page Rendering
-    // ========================================
-    function renderCartPage() {
-        const cartTableBody = document.getElementById('cartTableBody');
-        const cartEmptyMessage = document.getElementById('cartEmpty');
-        const cartContent = document.getElementById('cartContent');
-        const cartSubtotal = document.getElementById('cartSubtotal');
-        const cartTotal = document.getElementById('cartTotal');
+    // Load related products
+    loadRelatedProducts(product.category, productId);
 
-        if (!cartTableBody) return;
+    // Load sidebar top rated
+    loadSidebarTopRated();
+}
 
-        const cart = Cart.getCart();
+// =====================================================
+// QUANTITY SELECTOR
+// =====================================================
+function initQuantitySelector() {
+    const qtyContainers = document.querySelectorAll('.quantity-selector');
 
-        if (cart.length === 0) {
-            if (cartEmptyMessage) cartEmptyMessage.style.display = 'block';
-            if (cartContent) cartContent.style.display = 'none';
-            return;
-        }
+    qtyContainers.forEach(container => {
+        const minusBtn = container.querySelector('.qty-minus');
+        const plusBtn = container.querySelector('.qty-plus');
+        const input = container.querySelector('.qty-input');
 
-        if (cartEmptyMessage) cartEmptyMessage.style.display = 'none';
-        if (cartContent) cartContent.style.display = 'block';
+        if (!minusBtn || !plusBtn || !input) return;
 
-        cartTableBody.innerHTML = cart.map(item => `
-            <tr data-id="${item.id}">
-                <td>
-                    <div class="cart-product">
-                        <div class="cart-product-image">
-                            ${getCategoryIcon(item.category)}
-                        </div>
-                        <span class="cart-product-title">${item.name}</span>
-                    </div>
-                </td>
-                <td>₹${item.price.toLocaleString()}</td>
-                <td>
-                    <div class="cart-quantity">
-                        <button class="qty-minus" data-id="${item.id}">-</button>
-                        <input type="number" value="${item.quantity}" min="1" max="10" data-id="${item.id}" class="qty-input">
-                        <button class="qty-plus" data-id="${item.id}">+</button>
-                    </div>
-                </td>
-                <td>₹${(item.price * item.quantity).toLocaleString()}</td>
-                <td>
-                    <button class="cart-remove" data-id="${item.id}">&times;</button>
-                </td>
-            </tr>
-        `).join('');
+        minusBtn.addEventListener('click', () => {
+            const currentVal = parseInt(input.value) || 1;
+            if (currentVal > 1) {
+                input.value = currentVal - 1;
+                input.dispatchEvent(new Event('change'));
+            }
+        });
 
-        // Update totals
-        const total = Cart.getTotal();
-        if (cartSubtotal) cartSubtotal.textContent = `₹${total.toLocaleString()}`;
-        if (cartTotal) cartTotal.textContent = `₹${total.toLocaleString()}`;
+        plusBtn.addEventListener('click', () => {
+            const currentVal = parseInt(input.value) || 1;
+            const maxVal = parseInt(input.max) || 10;
+            if (currentVal < maxVal) {
+                input.value = currentVal + 1;
+                input.dispatchEvent(new Event('change'));
+            }
+        });
+    });
+}
 
-        // Add event listeners
-        cartTableBody.querySelectorAll('.qty-minus').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const id = parseInt(this.dataset.id);
-                const item = cart.find(i => i.id === id);
-                if (item && item.quantity > 1) {
-                    Cart.updateQuantity(id, item.quantity - 1);
-                    renderCartPage();
+// =====================================================
+// PRODUCT TABS
+// =====================================================
+function initProductTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.dataset.tab;
+
+            // Update buttons
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Update panes
+            tabPanes.forEach(pane => {
+                pane.classList.remove('active');
+                if (pane.id === tabId) {
+                    pane.classList.add('active');
                 }
             });
         });
+    });
 
-        cartTableBody.querySelectorAll('.qty-plus').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const id = parseInt(this.dataset.id);
-                const item = cart.find(i => i.id === id);
-                if (item && item.quantity < 10) {
-                    Cart.updateQuantity(id, item.quantity + 1);
-                    renderCartPage();
-                }
-            });
-        });
-
-        cartTableBody.querySelectorAll('.qty-input').forEach(input => {
-            input.addEventListener('change', function() {
-                const id = parseInt(this.dataset.id);
-                const qty = Math.max(1, Math.min(10, parseInt(this.value) || 1));
-                Cart.updateQuantity(id, qty);
-                renderCartPage();
-            });
-        });
-
-        cartTableBody.querySelectorAll('.cart-remove').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const id = parseInt(this.dataset.id);
-                Cart.removeItem(id);
-                renderCartPage();
-            });
-        });
-    }
-
-    // ========================================
-    // Checkout Page Rendering
-    // ========================================
-    function renderCheckoutPage() {
-        const orderItems = document.getElementById('orderItems');
-        const orderSubtotal = document.getElementById('orderSubtotal');
-        const orderTotal = document.getElementById('orderTotal');
-
-        if (!orderItems) return;
-
-        const cart = Cart.getCart();
-
-        if (cart.length === 0) {
-            window.location.href = 'cart.html';
-            return;
-        }
-
-        orderItems.innerHTML = cart.map(item => `
-            <div class="order-item">
-                <div class="order-item-name">
-                    <span class="order-item-qty">${item.quantity}</span>
-                    <span>${item.name}</span>
-                </div>
-                <span>₹${(item.price * item.quantity).toLocaleString()}</span>
-            </div>
-        `).join('');
-
-        const total = Cart.getTotal();
-        if (orderSubtotal) orderSubtotal.textContent = `₹${total.toLocaleString()}`;
-        if (orderTotal) orderTotal.textContent = `₹${total.toLocaleString()}`;
-
-        // Payment method selection
-        const paymentMethods = document.querySelectorAll('.payment-method');
-        paymentMethods.forEach(method => {
-            method.addEventListener('click', function() {
-                paymentMethods.forEach(m => m.classList.remove('active'));
-                this.classList.add('active');
-                this.querySelector('input[type="radio"]').checked = true;
-            });
-        });
-
-        // Checkout form submission
-        const checkoutForm = document.getElementById('checkoutForm');
-        if (checkoutForm) {
-            checkoutForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                // Simulate order placement
-                Cart.showNotification('Order placed successfully! We will contact you shortly.', 'success');
-                Cart.clearCart();
-
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 2000);
-            });
-        }
-    }
-
-    // ========================================
-    // Shop Page Filtering
-    // ========================================
-    function initShopFilters() {
-        const categoryFilters = document.querySelectorAll('.category-filter');
-        const sortSelect = document.getElementById('shopSort');
-
-        if (!categoryFilters.length && !sortSelect) return;
-
-        let filteredProducts = [...productsData];
-        let activeCategory = 'all';
-
-        categoryFilters.forEach(filter => {
-            filter.addEventListener('click', function(e) {
-                e.preventDefault();
-                activeCategory = this.dataset.category;
-
-                categoryFilters.forEach(f => f.classList.remove('active'));
-                this.classList.add('active');
-
-                applyFilters();
-            });
-        });
-
-        if (sortSelect) {
-            sortSelect.addEventListener('change', applyFilters);
-        }
-
-        function applyFilters() {
-            let result = [...productsData];
-
-            // Category filter
-            if (activeCategory !== 'all') {
-                result = result.filter(p => p.category === activeCategory);
-            }
-
-            // Sort
-            if (sortSelect) {
-                const sortValue = sortSelect.value;
-                switch (sortValue) {
-                    case 'price-low':
-                        result.sort((a, b) => a.price - b.price);
-                        break;
-                    case 'price-high':
-                        result.sort((a, b) => b.price - a.price);
-                        break;
-                    case 'name':
-                        result.sort((a, b) => a.name.localeCompare(b.name));
-                        break;
-                }
-            }
-
-            renderProducts('shopProductsGrid', result);
-
-            // Update result count
-            const resultCount = document.getElementById('resultCount');
-            if (resultCount) {
-                resultCount.textContent = `Showing ${result.length} products`;
-            }
-        }
-    }
-
-    // ========================================
-    // Contact Form
-    // ========================================
-    function initContactForm() {
-        const contactForm = document.getElementById('contactForm');
-        if (!contactForm) return;
-
-        contactForm.addEventListener('submit', function(e) {
+    // Review form submission
+    const reviewForm = document.getElementById('reviewForm');
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', (e) => {
             e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-
-            // Simple validation
-            if (!data.name || !data.phone || !data.message) {
-                Cart.showNotification('Please fill in all required fields.', 'error');
-                return;
-            }
-
-            // Simulate form submission
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                Cart.showNotification('Message sent successfully! We will contact you soon.', 'success');
-                contactForm.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
+            Cart.showNotification('Thank you for your review! (Demo only - not saved)');
+            reviewForm.reset();
         });
     }
+}
 
-    // ========================================
-    // Scroll Animations
-    // ========================================
-    function initScrollAnimations() {
-        const revealElements = document.querySelectorAll('.reveal');
-        if (!revealElements.length) return;
+// =====================================================
+// RELATED PRODUCTS
+// =====================================================
+function loadRelatedProducts(category, excludeId) {
+    const container = document.getElementById('relatedProductsGrid');
+    if (!container) return;
 
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
+    const related = productsData
+        .filter(p => p.category === category && p.id !== excludeId)
+        .slice(0, 4);
 
-            revealElements.forEach(el => observer.observe(el));
-        } else {
-            revealElements.forEach(el => el.classList.add('active'));
-        }
-    }
-
-    // ========================================
-    // Active Navigation
-    // ========================================
-    function setActiveNavLink() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const navLinks = document.querySelectorAll('.nav-menu a, .mobile-menu-nav a');
-
-        navLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    }
-
-    // ========================================
-    // Product Detail Page - Tab Switching
-    // ========================================
-    function initProductTabs() {
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabPanes = document.querySelectorAll('.tab-pane');
-
-        if (!tabBtns.length) return;
-
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const targetTab = this.dataset.tab;
-
-                // Remove active from all buttons and panes
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabPanes.forEach(p => p.classList.remove('active'));
-
-                // Add active to clicked button and corresponding pane
-                this.classList.add('active');
-                const targetPane = document.getElementById(targetTab);
-                if (targetPane) {
-                    targetPane.classList.add('active');
-                }
-            });
-        });
-    }
-
-    // ========================================
-    // Product Detail Page - Quantity Selector
-    // ========================================
-    function initProductQuantity() {
-        const qtyMinus = document.querySelector('.product-add-to-cart .qty-minus');
-        const qtyPlus = document.querySelector('.product-add-to-cart .qty-plus');
-        const qtyInput = document.getElementById('productQty');
-
-        if (!qtyMinus || !qtyPlus || !qtyInput) return;
-
-        qtyMinus.addEventListener('click', function() {
-            const current = parseInt(qtyInput.value) || 1;
-            if (current > 1) {
-                qtyInput.value = current - 1;
-            }
-        });
-
-        qtyPlus.addEventListener('click', function() {
-            const current = parseInt(qtyInput.value) || 1;
-            if (current < 10) {
-                qtyInput.value = current + 1;
-            }
-        });
-
-        qtyInput.addEventListener('change', function() {
-            let value = parseInt(this.value) || 1;
-            if (value < 1) value = 1;
-            if (value > 10) value = 10;
-            this.value = value;
-        });
-    }
-
-    // ========================================
-    // Product Detail Page - Add to Cart
-    // ========================================
-    function initProductAddToCart() {
-        const addToCartBtn = document.getElementById('addToCartBtn');
-        const qtyInput = document.getElementById('productQty');
-
-        if (!addToCartBtn) return;
-
-        addToCartBtn.addEventListener('click', function() {
-            const productId = parseInt(this.dataset.productId);
-            const quantity = parseInt(qtyInput?.value) || 1;
-
-            // Check if product exists in productsData
-            const product = productsData.find(p => p.id === productId);
-
-            if (product) {
-                // Use existing product from data
-                Cart.addItem(productId, quantity);
-            } else {
-                // For custom product pages, create item from page data
-                const productName = document.querySelector('.product-detail-title')?.textContent || 'Product';
-                const priceText = document.querySelector('.product-detail-price .price-current')?.textContent || '0';
-                const price = parseInt(priceText.replace(/[^0-9]/g, '')) || 0;
-                const category = document.querySelector('.product-meta a')?.textContent || 'Appliances';
-
-                // Add custom product to cart
-                const cart = Cart.getCart();
-                const customId = 'custom-' + Date.now();
-
-                cart.push({
-                    id: customId,
-                    name: productName,
-                    price: price,
-                    category: category,
-                    quantity: quantity
-                });
-
-                Cart.saveCart(cart);
-                Cart.showNotification(`${productName} added to cart!`);
-            }
-        });
-    }
-
-    // ========================================
-    // Product Detail Page - Related Products
-    // ========================================
-    function initRelatedProducts() {
-        const relatedGrid = document.getElementById('relatedProductsGrid');
-        if (!relatedGrid) return;
-
-        // Add click handlers for related product add to cart buttons
-        relatedGrid.querySelectorAll('.btn-add-cart').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const productId = parseInt(this.dataset.id);
-                if (productId) {
-                    Cart.addItem(productId);
-                }
-            });
-        });
-    }
-
-    // ========================================
-    // Product Detail Page - Review Form
-    // ========================================
-    function initReviewForm() {
-        const reviewForm = document.getElementById('reviewForm');
-        if (!reviewForm) return;
-
-        reviewForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('reviewName')?.value;
-            const rating = document.getElementById('reviewRating')?.value;
-            const comment = document.getElementById('reviewComment')?.value;
-
-            if (!name || !rating || !comment) {
-                Cart.showNotification('Please fill in all fields.', 'error');
-                return;
-            }
-
-            // Simulate review submission
-            const submitBtn = reviewForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Submitting...';
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                Cart.showNotification('Thank you for your review! It will be published after moderation.', 'success');
-                reviewForm.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
-        });
-    }
-
-    // ========================================
-    // Initialize
-    // ========================================
-    function init() {
-        // Core functionality
-        initMobileNav();
-        initStickyHeader();
-        initSearchOverlay();
-        initScrollAnimations();
-        setActiveNavLink();
-        Cart.updateCartCount();
-
-        // Page-specific
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-
-        if (currentPage === 'index.html' || currentPage === '') {
-            renderProducts('newArrivalsGrid', productsData, 8);
-            renderProducts('featuredProductsGrid', productsData.slice(4), 8);
-        }
-
-        if (currentPage === 'shop.html') {
-            renderProducts('shopProductsGrid', productsData);
-            initShopFilters();
-        }
-
-        if (currentPage === 'cart.html') {
-            renderCartPage();
-        }
-
-        if (currentPage === 'checkout.html') {
-            renderCheckoutPage();
-        }
-
-        if (currentPage === 'contact.html') {
-            initContactForm();
-        }
-
-        // Product Detail Page
-        if (currentPage === 'product.html' || currentPage.startsWith('product-')) {
-            initProductTabs();
-            initProductQuantity();
-            initProductAddToCart();
-            initRelatedProducts();
-            initReviewForm();
-        }
-
-        console.log('Unity Appliances - E-commerce Website Initialized');
-    }
-
-    // Run on DOM ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+    if (related.length === 0) {
+        // Show products from other categories if no related found
+        const others = productsData.filter(p => p.id !== excludeId).slice(0, 4);
+        container.innerHTML = others.map(product => createProductCard(product)).join('');
     } else {
-        init();
+        container.innerHTML = related.map(product => createProductCard(product)).join('');
     }
 
-    // Expose Cart globally
-    window.UnityCart = Cart;
-    window.productsData = productsData;
+    initProductCardEvents();
+}
 
-})();
+// =====================================================
+// TOP RATED PRODUCTS (Sidebar)
+// =====================================================
+function initTopRatedProducts() {
+    const containers = document.querySelectorAll('#topRatedList, #sidebarTopRated');
+
+    containers.forEach(container => {
+        if (!container) return;
+        loadTopRatedIntoContainer(container);
+    });
+}
+
+function loadTopRatedIntoContainer(container) {
+    const topRated = productsData
+        .filter(p => p.rating >= 4)
+        .slice(0, 3);
+
+    container.innerHTML = topRated.map(product => `
+        <a href="product.html?id=${product.id}" class="top-rated-item">
+            <div class="top-rated-thumb">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+            </div>
+            <div class="top-rated-info">
+                <h5>${product.name}</h5>
+                <span class="top-rated-price">Rs ${product.price.toLocaleString()}</span>
+            </div>
+        </a>
+    `).join('');
+}
+
+function loadSidebarTopRated() {
+    const container = document.getElementById('sidebarTopRated');
+    if (container) {
+        loadTopRatedIntoContainer(container);
+    }
+}
+
+// =====================================================
+// CART PAGE
+// =====================================================
+function initCartPage() {
+    const cartTableBody = document.getElementById('cartTableBody');
+    if (!cartTableBody) return;
+
+    renderCartPage();
+
+    // Update cart button
+    const updateBtn = document.getElementById('updateCartBtn');
+    if (updateBtn) {
+        updateBtn.addEventListener('click', () => {
+            Cart.showNotification('Cart updated!');
+            renderCartPage();
+        });
+    }
+
+    // Apply coupon button (demo)
+    const couponBtn = document.getElementById('applyCouponBtn');
+    if (couponBtn) {
+        couponBtn.addEventListener('click', () => {
+            const code = document.getElementById('couponCode')?.value;
+            if (code) {
+                Cart.showNotification('Coupon feature coming soon! (Demo)');
+            } else {
+                Cart.showNotification('Please enter a coupon code', 'error');
+            }
+        });
+    }
+}
+
+function renderCartPage() {
+    const cartTableBody = document.getElementById('cartTableBody');
+    const cartEmpty = document.getElementById('cartEmpty');
+    const cartContent = document.getElementById('cartContent');
+
+    if (!cartTableBody) return;
+
+    const cart = Cart.getCart();
+
+    if (cart.length === 0) {
+        if (cartEmpty) cartEmpty.style.display = 'block';
+        if (cartContent) cartContent.style.display = 'none';
+        return;
+    }
+
+    if (cartEmpty) cartEmpty.style.display = 'none';
+    if (cartContent) cartContent.style.display = 'block';
+
+    cartTableBody.innerHTML = cart.map(item => `
+        <tr data-product-id="${item.id}">
+            <td class="product-remove">
+                <button class="cart-remove" data-product-id="${item.id}">&times;</button>
+            </td>
+            <td class="product-thumbnail">
+                <div class="cart-product-image">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                </div>
+            </td>
+            <td class="product-name">
+                <a href="product.html?id=${item.id}" class="cart-product-title">${item.name}</a>
+            </td>
+            <td class="product-price">Rs ${item.price.toLocaleString()}</td>
+            <td class="product-quantity">
+                <div class="cart-quantity">
+                    <button class="qty-minus" data-product-id="${item.id}">-</button>
+                    <input type="number" value="${item.quantity}" min="1" max="10" class="cart-qty-input" data-product-id="${item.id}">
+                    <button class="qty-plus" data-product-id="${item.id}">+</button>
+                </div>
+            </td>
+            <td class="product-subtotal">Rs ${(item.price * item.quantity).toLocaleString()}</td>
+        </tr>
+    `).join('');
+
+    // Update totals
+    const subtotal = Cart.getTotal();
+    const subtotalEl = document.getElementById('cartSubtotal');
+    const totalEl = document.getElementById('cartTotal');
+
+    if (subtotalEl) subtotalEl.textContent = `Rs ${subtotal.toLocaleString()}`;
+    if (totalEl) totalEl.textContent = `Rs ${subtotal.toLocaleString()}`;
+
+    // Add event listeners
+    initCartPageEvents();
+}
+
+function initCartPageEvents() {
+    // Remove buttons
+    document.querySelectorAll('.cart-remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const productId = parseInt(btn.dataset.productId);
+            Cart.removeItem(productId);
+            renderCartPage();
+        });
+    });
+
+    // Quantity buttons
+    document.querySelectorAll('.cart-quantity .qty-minus').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const productId = parseInt(btn.dataset.productId);
+            const input = btn.parentElement.querySelector('input');
+            const newQty = Math.max(1, parseInt(input.value) - 1);
+            input.value = newQty;
+            Cart.updateQuantity(productId, newQty);
+            renderCartPage();
+        });
+    });
+
+    document.querySelectorAll('.cart-quantity .qty-plus').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const productId = parseInt(btn.dataset.productId);
+            const input = btn.parentElement.querySelector('input');
+            const newQty = Math.min(10, parseInt(input.value) + 1);
+            input.value = newQty;
+            Cart.updateQuantity(productId, newQty);
+            renderCartPage();
+        });
+    });
+
+    // Quantity input change
+    document.querySelectorAll('.cart-qty-input').forEach(input => {
+        input.addEventListener('change', () => {
+            const productId = parseInt(input.dataset.productId);
+            const newQty = Math.max(1, Math.min(10, parseInt(input.value) || 1));
+            input.value = newQty;
+            Cart.updateQuantity(productId, newQty);
+            renderCartPage();
+        });
+    });
+}
+
+// =====================================================
+// CHECKOUT PAGE
+// =====================================================
+function initCheckoutPage() {
+    const checkoutForm = document.getElementById('checkoutForm');
+    if (!checkoutForm) return;
+
+    // Load order summary
+    loadOrderSummary();
+
+    // Payment method selection
+    initPaymentMethods();
+
+    // Form submission
+    checkoutForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Validate form
+        if (!checkoutForm.checkValidity()) {
+            checkoutForm.reportValidity();
+            return;
+        }
+
+        // Show success modal
+        const modal = document.getElementById('orderSuccessModal');
+        if (modal) {
+            modal.classList.add('active');
+
+            // Clear cart
+            Cart.clearCart();
+        }
+    });
+}
+
+function loadOrderSummary() {
+    const orderItems = document.getElementById('orderItems');
+    const orderSubtotal = document.getElementById('orderSubtotal');
+    const orderTotal = document.getElementById('orderTotal');
+
+    if (!orderItems) return;
+
+    const cart = Cart.getCart();
+
+    if (cart.length === 0) {
+        orderItems.innerHTML = '<p style="text-align: center; color: #999;">Your cart is empty</p>';
+        return;
+    }
+
+    orderItems.innerHTML = cart.map(item => `
+        <div class="order-item">
+            <div class="order-item-name">
+                <span class="order-item-qty">${item.quantity}</span>
+                <span>${item.name}</span>
+            </div>
+            <span>Rs ${(item.price * item.quantity).toLocaleString()}</span>
+        </div>
+    `).join('');
+
+    const total = Cart.getTotal();
+    if (orderSubtotal) orderSubtotal.textContent = `Rs ${total.toLocaleString()}`;
+    if (orderTotal) orderTotal.textContent = `Rs ${total.toLocaleString()}`;
+}
+
+function initPaymentMethods() {
+    const paymentMethods = document.querySelectorAll('.payment-method');
+
+    paymentMethods.forEach(method => {
+        method.addEventListener('click', () => {
+            paymentMethods.forEach(m => m.classList.remove('active'));
+            method.classList.add('active');
+            const radio = method.querySelector('input[type="radio"]');
+            if (radio) radio.checked = true;
+        });
+    });
+}
+
+// =====================================================
+// ACCOUNT PAGE
+// =====================================================
+function initAccountPage() {
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            Cart.showNotification('Login feature coming soon! (Demo only)');
+        });
+    }
+
+    if (registerForm) {
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const password = document.getElementById('registerPassword')?.value;
+            const confirmPassword = document.getElementById('registerConfirmPassword')?.value;
+
+            if (password !== confirmPassword) {
+                Cart.showNotification('Passwords do not match!', 'error');
+                return;
+            }
+
+            Cart.showNotification('Account created! (Demo only - not saved)');
+            registerForm.reset();
+        });
+    }
+}
+
+// =====================================================
+// SCROLL ANIMATIONS
+// =====================================================
+function initScrollAnimations() {
+    const reveals = document.querySelectorAll('.reveal');
+
+    function checkReveal() {
+        reveals.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const revealTop = el.getBoundingClientRect().top;
+            const revealPoint = 150;
+
+            if (revealTop < windowHeight - revealPoint) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkReveal);
+    checkReveal(); // Check on load
+}
+
+// =====================================================
+// UTILITY FUNCTIONS
+// =====================================================
+
+// Format price
+function formatPrice(price) {
+    return `Rs ${price.toLocaleString()}`;
+}
+
+// Debounce function
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// =====================================================
+// GLOBAL SEARCH (Header)
+// =====================================================
+const globalSearchInput = document.getElementById('globalSearchInput');
+if (globalSearchInput) {
+    globalSearchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const query = globalSearchInput.value.trim();
+            if (query) {
+                window.location.href = `shop.html?search=${encodeURIComponent(query)}`;
+            }
+        }
+    });
+}
