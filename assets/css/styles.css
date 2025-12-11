@@ -349,7 +349,7 @@ input, textarea, select {
 .hero {
     position: relative;
     height: 600px;
-    background: url('../images/hero image/household-appliances-realistic-composition_1284-65307.avif');
+    background: url('../images/hero%20image/household-appliances-realistic-composition_1284-65307.avif');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -357,7 +357,7 @@ input, textarea, select {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--dark-green);
+    color: #000000;
 }
 
 .hero-content {
@@ -633,7 +633,7 @@ input, textarea, select {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--white);
+    color: #000000;
 }
 
 .promo-banner-content {
