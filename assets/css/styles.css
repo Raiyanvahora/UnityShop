@@ -349,8 +349,7 @@ input, textarea, select {
 .hero {
     position: relative;
     height: 600px;
-    background: linear-gradient(rgba(26, 79, 68, 0.85), rgba(26, 79, 68, 0.75)),
-                url('https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=1920&q=80');
+    background: url('../images/hero image/household-appliances-realistic-composition_1284-65307.avif');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -358,7 +357,7 @@ input, textarea, select {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--white);
+    color: var(--dark-green);
 }
 
 .hero-content {
@@ -371,7 +370,6 @@ input, textarea, select {
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 15px;
-    opacity: 0.9;
 }
 
 .hero-title {
@@ -384,7 +382,6 @@ input, textarea, select {
 .hero-text {
     font-size: 16px;
     margin-bottom: 30px;
-    opacity: 0.9;
 }
 
 .btn {
@@ -628,8 +625,7 @@ input, textarea, select {
 .promo-banner {
     position: relative;
     height: 450px;
-    background: linear-gradient(rgba(26, 79, 68, 0.88), rgba(26, 79, 68, 0.82)),
-                url('https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=1920&q=80');
+    background: url('https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=1920&q=80');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
