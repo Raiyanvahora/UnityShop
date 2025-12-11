@@ -708,12 +708,35 @@ function initProductCards() {
     // Initialize add to cart for all product cards
     initProductCardEvents();
 
-    // Render home page products if on index page
-    const homeProductGrid = document.querySelector('.section .products-grid:not(.products-grid-shop)');
-    if (homeProductGrid && !document.getElementById('shopProductsGrid')) {
-        // Show featured products on home page
-        const featuredProducts = productsData.slice(0, 8);
-        homeProductGrid.innerHTML = featuredProducts.map(product => createProductCard(product)).join('');
+    // Check if we're on the home page with category grids
+    const fridgesGrid = document.getElementById('fridgesGrid');
+    const acsGrid = document.getElementById('acsGrid');
+    const washingMachinesGrid = document.getElementById('washingMachinesGrid');
+    const ovensGrid = document.getElementById('ovensGrid');
+
+    // Render products by category on home page
+    if (fridgesGrid) {
+        const fridges = productsData.filter(p => p.category === 'Fridges');
+        fridgesGrid.innerHTML = fridges.map(product => createProductCard(product)).join('');
+    }
+
+    if (acsGrid) {
+        const acs = productsData.filter(p => p.category === 'ACs');
+        acsGrid.innerHTML = acs.map(product => createProductCard(product)).join('');
+    }
+
+    if (washingMachinesGrid) {
+        const washingMachines = productsData.filter(p => p.category === 'Washing Machines');
+        washingMachinesGrid.innerHTML = washingMachines.map(product => createProductCard(product)).join('');
+    }
+
+    if (ovensGrid) {
+        const ovens = productsData.filter(p => p.category === 'Ovens');
+        ovensGrid.innerHTML = ovens.map(product => createProductCard(product)).join('');
+    }
+
+    // Re-initialize events after rendering
+    if (fridgesGrid || acsGrid || washingMachinesGrid || ovensGrid) {
         initProductCardEvents();
     }
 }
