@@ -1820,70 +1820,85 @@ input, textarea, select {
 
 @media (max-width: 768px) {
     /* =====================================================
-       MOBILE HEADER - Compact like Ecomshift
+       MOBILE HEADER - Compact & Perfectly Aligned
        ===================================================== */
+
+    /* Top Yellow Bar - Centered & Tight */
     .top-bar {
-        padding: 6px 0;
+        padding: 8px 0;
     }
 
     .top-bar .container {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 8px;
+        justify-content: center;
     }
 
     .top-bar-left {
-        gap: 8px;
-    }
-
-    .social-icons {
         display: none;
     }
 
     .top-bar-right {
-        gap: 12px;
-        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        font-size: 11px;
+        width: 100%;
     }
 
     .top-bar-right a {
+        padding: 0 8px;
         letter-spacing: 0.3px;
+        position: relative;
     }
 
+    /* Add separators between links */
+    .top-bar-right a:not(:last-child)::after {
+        content: '|';
+        position: absolute;
+        right: -3px;
+        color: var(--text-dark);
+        opacity: 0.4;
+    }
+
+    /* Main Header - Perfectly Balanced */
     .main-header {
-        padding: 10px 0;
+        padding: 12px 0;
         box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
 
     .main-header.scrolled {
-        padding: 8px 0;
+        padding: 10px 0;
+    }
+
+    .main-header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Logo - Left aligned */
+    .logo {
+        flex: 1;
     }
 
     .logo a {
-        font-size: 18px;
+        font-size: 16px;
         gap: 8px;
     }
 
     .logo-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 16px;
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
         border-radius: 6px;
+        flex-shrink: 0;
     }
 
-    .header-icons {
-        gap: 12px;
-    }
-
-    .header-icon {
-        font-size: 18px;
-    }
-
-    .cart-count {
-        width: 16px;
-        height: 16px;
-        font-size: 9px;
-        top: -6px;
-        right: -6px;
+    /* Nav with hamburger - Center area */
+    .main-nav {
+        display: flex;
+        align-items: center;
+        order: 3;
     }
 
     .nav-menu {
@@ -1892,13 +1907,50 @@ input, textarea, select {
 
     .menu-toggle {
         display: flex;
-        gap: 4px;
-        padding: 4px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 8px;
+        margin-left: 8px;
     }
 
     .menu-toggle span {
-        width: 22px;
+        width: 20px;
         height: 2px;
+        background-color: var(--text-dark);
+        border-radius: 1px;
+        transition: var(--transition);
+    }
+
+    /* Header Icons - Right aligned */
+    .header-icons {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        order: 2;
+    }
+
+    .header-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .header-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cart-count {
+        width: 16px;
+        height: 16px;
+        font-size: 9px;
+        top: 2px;
+        right: 2px;
     }
 
     /* =====================================================
@@ -2392,32 +2444,37 @@ input, textarea, select {
     }
 
     /* =====================================================
-       EXTRA SMALL MOBILE - Header
+       EXTRA SMALL MOBILE - Header (Refined)
        ===================================================== */
     .top-bar {
-        padding: 5px 0;
-    }
-
-    .top-bar-left {
-        display: none;
-    }
-
-    .top-bar .container {
-        justify-content: center;
+        padding: 6px 0;
     }
 
     .top-bar-right {
-        gap: 10px;
-        font-size: 9px;
+        gap: 4px;
+        font-size: 10px;
+    }
+
+    .top-bar-right a {
+        padding: 0 6px;
     }
 
     .main-header {
+        padding: 10px 0;
+    }
+
+    .main-header.scrolled {
         padding: 8px 0;
     }
 
     .logo a {
-        font-size: 16px;
+        font-size: 14px;
         gap: 6px;
+    }
+
+    /* Hide text on very small screens, show only icon */
+    .logo a {
+        font-size: 0; /* Hide text */
     }
 
     .logo-icon {
@@ -2427,24 +2484,43 @@ input, textarea, select {
         border-radius: 5px;
     }
 
+    /* Show abbreviated text next to icon */
+    .logo a::after {
+        content: 'Unity';
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--dark-green);
+    }
+
     .header-icons {
-        gap: 10px;
+        gap: 2px;
     }
 
     .header-icon {
-        font-size: 16px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .header-icon svg {
+        width: 18px;
+        height: 18px;
     }
 
     .cart-count {
         width: 14px;
         height: 14px;
         font-size: 8px;
-        top: -5px;
-        right: -5px;
+        top: 3px;
+        right: 3px;
+    }
+
+    .menu-toggle {
+        padding: 6px;
+        margin-left: 4px;
     }
 
     .menu-toggle span {
-        width: 20px;
+        width: 18px;
         height: 2px;
     }
 
