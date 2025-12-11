@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PRODUCT_NAME - Buy quality used and refurbished home appliances at Unity Appliances. Best prices with warranty.">
-    <title>PRODUCT_NAME | Unity Appliances</title>
+    <meta name="description" content="Buy quality used and refurbished home appliances at Unity Appliances. Best prices with warranty.">
+    <title>Product Details | Unity Appliances</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="top-bar-right">
-                <a href="contact.html">My Account</a>
+                <a href="account.html">My Account</a>
                 <a href="cart.html">Shopping Cart</a>
                 <a href="contact.html">Contact Us</a>
             </div>
@@ -83,6 +83,7 @@
             <a href="terms.html">Terms & Conditions</a>
             <a href="refund.html">Refund & Returns</a>
             <a href="contact.html">Contact Us</a>
+            <a href="account.html">My Account</a>
             <a href="cart.html">Shopping Cart</a>
         </nav>
     </div>
@@ -103,7 +104,7 @@
                 <span>/</span>
                 <a href="shop.html">Shop</a>
                 <span>/</span>
-                <span>PRODUCT_NAME</span>
+                <span id="breadcrumbProductName">Product</span>
             </div>
         </div>
     </section>
@@ -119,11 +120,11 @@
                         <h4 class="sidebar-title">Product Categories</h4>
                         <ul class="category-list">
                             <li><a href="shop.html">All Products <span class="count">16</span></a></li>
-                            <li><a href="shop.html?cat=fridges">Fridges <span class="count">3</span></a></li>
-                            <li><a href="shop.html?cat=acs">ACs <span class="count">3</span></a></li>
-                            <li><a href="shop.html?cat=washing">Washing Machines <span class="count">3</span></a></li>
-                            <li><a href="shop.html?cat=ovens">Ovens <span class="count">3</span></a></li>
-                            <li><a href="shop.html?cat=spare">Spare Parts <span class="count">4</span></a></li>
+                            <li><a href="shop.html?cat=Fridges">Fridges <span class="count">3</span></a></li>
+                            <li><a href="shop.html?cat=ACs">ACs <span class="count">3</span></a></li>
+                            <li><a href="shop.html?cat=Washing Machines">Washing Machines <span class="count">3</span></a></li>
+                            <li><a href="shop.html?cat=Ovens">Ovens <span class="count">3</span></a></li>
+                            <li><a href="shop.html?cat=Spare Parts">Spare Parts <span class="count">4</span></a></li>
                         </ul>
                     </div>
 
@@ -141,59 +142,11 @@
                         </div>
                     </div>
 
-                    <!-- Filter by Price Widget -->
-                    <div class="sidebar-widget">
-                        <h4 class="sidebar-title">Filter by Price</h4>
-                        <div class="price-filter">
-                            <div class="price-inputs">
-                                <input type="number" placeholder="Min" class="price-min">
-                                <span>-</span>
-                                <input type="number" placeholder="Max" class="price-max">
-                            </div>
-                            <button class="btn btn-sm btn-dark price-filter-btn">Filter</button>
-                        </div>
-                    </div>
-
                     <!-- Top Rated Products Widget -->
                     <div class="sidebar-widget">
                         <h4 class="sidebar-title">Top Rated Products</h4>
-                        <div class="top-rated-list">
-                            <a href="product.html" class="top-rated-item">
-                                <div class="top-rated-thumb">
-                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                                        <line x1="4" y1="10" x2="20" y2="10"></line>
-                                    </svg>
-                                </div>
-                                <div class="top-rated-info">
-                                    <h5>Samsung Double Door Fridge</h5>
-                                    <span class="top-rated-price">Rs 18,999</span>
-                                </div>
-                            </a>
-                            <a href="product.html" class="top-rated-item">
-                                <div class="top-rated-thumb">
-                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <rect x="2" y="4" width="20" height="10" rx="2"></rect>
-                                        <path d="M6 18v-4M10 18v-4M14 18v-4M18 18v-4"></path>
-                                    </svg>
-                                </div>
-                                <div class="top-rated-info">
-                                    <h5>LG 1.5 Ton Split AC</h5>
-                                    <span class="top-rated-price">Rs 22,999</span>
-                                </div>
-                            </a>
-                            <a href="product.html" class="top-rated-item">
-                                <div class="top-rated-thumb">
-                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                                        <circle cx="12" cy="14" r="4"></circle>
-                                    </svg>
-                                </div>
-                                <div class="top-rated-info">
-                                    <h5>Whirlpool Front Load</h5>
-                                    <span class="top-rated-price">Rs 14,999</span>
-                                </div>
-                            </a>
+                        <div class="top-rated-list" id="sidebarTopRated">
+                            <!-- Will be populated by JS -->
                         </div>
                     </div>
                 </aside>
@@ -204,35 +157,25 @@
                     <div class="product-detail-top">
                         <!-- Product Image -->
                         <div class="product-detail-image">
-                            <span class="product-badge badge-sale">Sale</span>
-                            <div class="product-main-image">
-                                <!-- Replace PRODUCT_MAIN_IMAGE with actual image path -->
-                                <div class="product-image-placeholder">
-                                    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                        <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                                        <line x1="4" y1="10" x2="20" y2="10"></line>
-                                        <line x1="8" y1="6" x2="8" y2="6.01"></line>
-                                        <line x1="8" y1="14" x2="8" y2="14.01"></line>
-                                    </svg>
-                                    <span>PRODUCT_MAIN_IMAGE</span>
-                                </div>
+                            <span class="product-badge badge-sale" id="productBadge">Sale</span>
+                            <div class="product-main-image" id="productMainImage">
+                                <!-- Will be populated by JS -->
                             </div>
                         </div>
 
                         <!-- Product Info -->
                         <div class="product-detail-info">
-                            <h1 class="product-detail-title">PRODUCT_NAME</h1>
+                            <h1 class="product-detail-title" id="productTitle">Loading...</h1>
 
                             <div class="product-detail-price">
-                                <span class="price-old">Rs OLD_PRICE</span>
-                                <span class="price-current">Rs NEW_PRICE</span>
+                                <span class="price-old" id="productOldPrice"></span>
+                                <span class="price-current" id="productCurrentPrice"></span>
                             </div>
 
                             <!-- Short Feature List -->
                             <div class="product-short-features">
                                 <h4>Key Benefits:</h4>
                                 <ul>
-                                    <!-- SHORT_FEATURE_LIST - Replace with actual features -->
                                     <li>Fully tested and serviced by certified technicians</li>
                                     <li>6-month warranty included on all parts</li>
                                     <li>Energy efficient - saves on electricity bills</li>
@@ -245,23 +188,23 @@
                                 <table class="product-details-table">
                                     <tr>
                                         <td><strong>Brand:</strong></td>
-                                        <td>BRAND_NAME</td>
+                                        <td id="productBrand">Unity Brand</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Capacity:</strong></td>
-                                        <td>CAPACITY_VALUE</td>
+                                        <td id="productCapacity">Standard</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Condition:</strong></td>
-                                        <td>CONDITION_TYPE</td>
+                                        <td id="productCondition">Refurbished</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Warranty:</strong></td>
-                                        <td>WARRANTY_PERIOD</td>
+                                        <td>6 Months</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Delivery:</strong></td>
-                                        <td>Free within CITY_NAME</td>
+                                        <td>Free within City</td>
                                     </tr>
                                 </table>
                             </div>
@@ -273,14 +216,14 @@
                                     <input type="number" class="qty-input" value="1" min="1" max="10" id="productQty">
                                     <button class="qty-btn qty-plus" type="button">+</button>
                                 </div>
-                                <button class="btn btn-primary btn-add-to-cart" id="addToCartBtn" data-product-id="PRODUCT_ID">
+                                <button class="btn btn-primary btn-add-to-cart" id="addToCartBtn" data-product-id="">
                                     ADD TO CART
                                 </button>
                             </div>
 
                             <!-- Category Line -->
                             <div class="product-meta">
-                                <span>Category: <a href="shop.html?cat=CATEGORY_SLUG">CATEGORY_NAME</a></span>
+                                <span>Category: <a href="shop.html" id="productCategoryLink">Appliances</a></span>
                             </div>
                         </div>
                     </div>
@@ -295,9 +238,7 @@
                         <div class="tab-content">
                             <!-- Description Tab -->
                             <div class="tab-pane active" id="description">
-                                <div class="product-description">
-                                    <!-- LONG_DESCRIPTION - Replace with actual description -->
-                                    <p>LONG_DESCRIPTION</p>
+                                <div class="product-description" id="productDescription">
                                     <p>This appliance has been professionally inspected, cleaned, and tested by our certified technicians. All worn parts have been replaced and the unit is in excellent working condition. We stand behind our products with a comprehensive warranty and dedicated after-sales support.</p>
                                     <p>Our refurbishment process includes:</p>
                                     <ul>
@@ -319,7 +260,7 @@
                                     </div>
 
                                     <div class="review-form-wrapper">
-                                        <h4>Be the first to review "PRODUCT_NAME"</h4>
+                                        <h4>Be the first to review this product</h4>
                                         <form class="review-form" id="reviewForm">
                                             <div class="form-group">
                                                 <label for="reviewName">Your Name *</label>
@@ -394,93 +335,7 @@
             <div class="related-products-section">
                 <h2 class="related-products-title">Related Products</h2>
                 <div class="related-products-grid" id="relatedProductsGrid">
-                    <!-- Related Product 1 -->
-                    <div class="product-card">
-                        <span class="product-badge badge-sale">Sale</span>
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                                    <line x1="4" y1="10" x2="20" y2="10"></line>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <p class="product-category">Fridges</p>
-                            <h3 class="product-title"><a href="product.html">Haier Single Door Refrigerator</a></h3>
-                            <div class="product-price">
-                                <span class="price-old">Rs 11,999</span>
-                                <span class="price-current">Rs 7,999</span>
-                            </div>
-                            <button class="btn-add-cart" data-id="9">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <!-- Related Product 2 -->
-                    <div class="product-card">
-                        <span class="product-badge badge-refurbished">Refurbished</span>
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                                    <line x1="4" y1="10" x2="20" y2="10"></line>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <p class="product-category">Fridges</p>
-                            <h3 class="product-title"><a href="product.html">Godrej Deep Freezer 300L</a></h3>
-                            <div class="product-price">
-                                <span class="price-old">Rs 18,000</span>
-                                <span class="price-current">Rs 12,999</span>
-                            </div>
-                            <button class="btn-add-cart" data-id="5">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <!-- Related Product 3 -->
-                    <div class="product-card">
-                        <span class="product-badge badge-sale">Sale</span>
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="2" y="4" width="20" height="10" rx="2"></rect>
-                                    <path d="M6 18v-4M10 18v-4M14 18v-4M18 18v-4"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <p class="product-category">ACs</p>
-                            <h3 class="product-title"><a href="product.html">Blue Star 2 Ton Split AC</a></h3>
-                            <div class="product-price">
-                                <span class="price-old">Rs 42,000</span>
-                                <span class="price-current">Rs 28,999</span>
-                            </div>
-                            <button class="btn-add-cart" data-id="10">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <!-- Related Product 4 -->
-                    <div class="product-card">
-                        <span class="product-badge badge-used">Used</span>
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                                    <circle cx="12" cy="14" r="4"></circle>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <p class="product-category">Washing Machines</p>
-                            <h3 class="product-title"><a href="product.html">LG Top Load 8kg</a></h3>
-                            <div class="product-price">
-                                <span class="price-old">Rs 16,999</span>
-                                <span class="price-current">Rs 11,999</span>
-                            </div>
-                            <button class="btn-add-cart" data-id="11">Add to Cart</button>
-                        </div>
-                    </div>
+                    <!-- Will be populated by JS -->
                 </div>
             </div>
         </div>
