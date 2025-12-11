@@ -21,7 +21,7 @@ const productsData = [
         brand: "Unity Brand",
         capacity: "260 Liters",
         rating: 5,
-        image: "",
+        image: "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=400&h=500&fit=crop",
         description: "Energy efficient double door refrigerator with frost-free technology. Perfect for medium-sized families."
     },
     {
@@ -35,7 +35,7 @@ const productsData = [
         brand: "Unity Brand",
         capacity: "180 Liters",
         rating: 4,
-        image: "",
+        image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&h=500&fit=crop",
         description: "Compact single door refrigerator ideal for small families or bachelor accommodations."
     },
     {
@@ -49,7 +49,7 @@ const productsData = [
         brand: "Unity Premium",
         capacity: "550 Liters",
         rating: 5,
-        image: "",
+        image: "https://images.unsplash.com/photo-1536353284924-9220c464e262?w=400&h=500&fit=crop",
         description: "Premium side by side refrigerator with water dispenser and ice maker."
     },
     // ACs
@@ -64,7 +64,7 @@ const productsData = [
         brand: "Unity Cool",
         capacity: "1.5 Ton",
         rating: 5,
-        image: "",
+        image: "https://images.unsplash.com/photo-1631545806609-44dc2e823cf7?w=400&h=500&fit=crop",
         description: "Energy efficient split AC with fast cooling technology. Suitable for rooms up to 180 sq ft."
     },
     {
@@ -78,7 +78,7 @@ const productsData = [
         brand: "Unity Cool",
         capacity: "1 Ton",
         rating: 4,
-        image: "",
+        image: "https://images.unsplash.com/photo-1625961332071-f1673bcbcda4?w=400&h=500&fit=crop",
         description: "Compact window AC perfect for small rooms. Easy installation and maintenance."
     },
     {
@@ -92,7 +92,7 @@ const productsData = [
         brand: "Unity Premium",
         capacity: "2 Ton",
         rating: 5,
-        image: "",
+        image: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=400&h=500&fit=crop",
         description: "Premium inverter AC with 5 star rating. Ultra energy efficient with silent operation."
     },
     // Washing Machines
@@ -107,7 +107,7 @@ const productsData = [
         brand: "Unity Wash",
         capacity: "7 kg",
         rating: 5,
-        image: "",
+        image: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&h=500&fit=crop",
         description: "Fully automatic front load washing machine with multiple wash programs."
     },
     {
@@ -121,7 +121,7 @@ const productsData = [
         brand: "Unity Wash",
         capacity: "6.5 kg",
         rating: 4,
-        image: "",
+        image: "https://images.unsplash.com/photo-1610557892470-55d9e80c0571?w=400&h=500&fit=crop",
         description: "Semi-automatic top load washing machine. Budget friendly option for daily use."
     },
     {
@@ -135,7 +135,7 @@ const productsData = [
         brand: "Unity Premium",
         capacity: "8 kg",
         rating: 5,
-        image: "",
+        image: "https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=400&h=500&fit=crop",
         description: "Large capacity fully automatic washing machine with digital display and multiple programs."
     },
     // Ovens
@@ -150,7 +150,7 @@ const productsData = [
         brand: "Unity Kitchen",
         capacity: "20 Liters",
         rating: 4,
-        image: "",
+        image: "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400&h=500&fit=crop",
         description: "Solo microwave oven perfect for reheating and basic cooking needs."
     },
     {
@@ -164,7 +164,7 @@ const productsData = [
         brand: "Unity Kitchen",
         capacity: "28 Liters",
         rating: 4,
-        image: "",
+        image: "https://images.unsplash.com/photo-1585659722983-3a675dabf23d?w=400&h=500&fit=crop",
         description: "Convection microwave with grill function. Ideal for baking and grilling."
     },
     {
@@ -178,7 +178,7 @@ const productsData = [
         brand: "Unity Premium",
         capacity: "30 Liters",
         rating: 5,
-        image: "",
+        image: "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=400&h=500&fit=crop",
         description: "Oven Toaster Griller with rotisserie function. Perfect for home baking enthusiasts."
     },
     // Spare Parts
@@ -193,7 +193,7 @@ const productsData = [
         brand: "Unity Parts",
         capacity: "Universal",
         rating: 5,
-        image: "",
+        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=500&fit=crop",
         description: "High quality universal compressor compatible with most refrigerator brands."
     },
     {
@@ -207,7 +207,7 @@ const productsData = [
         brand: "Unity Service",
         capacity: "R22/R32/R410",
         rating: 5,
-        image: "",
+        image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=500&fit=crop",
         description: "Professional AC gas refill service with leak testing and performance check."
     },
     {
@@ -221,7 +221,7 @@ const productsData = [
         brand: "Unity Parts",
         capacity: "Universal",
         rating: 4,
-        image: "",
+        image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=500&fit=crop",
         description: "Replacement motor for semi-automatic washing machines. Easy installation."
     },
     {
@@ -235,7 +235,7 @@ const productsData = [
         brand: "Unity Parts",
         capacity: "Universal",
         rating: 4,
-        image: "",
+        image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=400&h=500&fit=crop",
         description: "Replacement magnetron for microwave ovens. Professional installation recommended."
     }
 ];
@@ -642,17 +642,22 @@ function createProductCard(product) {
 
     const badgeText = product.badge.charAt(0).toUpperCase() + product.badge.slice(1);
 
+    // Check if product has an image
+    const imageContent = product.image
+        ? `<img src="${product.image}" alt="${product.name}" loading="lazy">`
+        : `<div class="product-placeholder">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+            </div>`;
+
     return `
         <div class="product-card" data-product-id="${product.id}" data-product-url="product.html?id=${product.id}">
             <span class="product-badge ${badgeClass}">${badgeText}</span>
             <div class="product-image">
-                <div class="product-placeholder">
-                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                        <polyline points="21 15 16 10 5 21"></polyline>
-                    </svg>
-                </div>
+                ${imageContent}
             </div>
             <div class="product-info">
                 <p class="product-category">${product.category}</p>
