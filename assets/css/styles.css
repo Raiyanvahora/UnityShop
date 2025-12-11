@@ -2019,36 +2019,44 @@ input, textarea, select {
     }
 
     .hero-subtitle {
-        font-size: 12px;
-        letter-spacing: 6px;
-        margin-bottom: 8px;
+        font-size: 13px;
+        letter-spacing: 5px;
+        margin-bottom: 5px;
         text-transform: uppercase;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 15px;
-        color: #333;
+        color: #444;
         white-space: nowrap;
         font-weight: 400;
     }
 
-    .hero-subtitle::before,
+    .hero-subtitle::before {
+        content: '';
+        height: 1px;
+        width: 60px;
+        background-color: #444;
+        flex-shrink: 0;
+    }
+
     .hero-subtitle::after {
         content: '';
         height: 1px;
-        width: 50px;
-        background-color: #333;
+        width: 60px;
+        background-color: #444;
         flex-shrink: 0;
     }
 
     .hero-title {
-        font-size: 38px;
-        line-height: 1.1;
-        margin-bottom: 22px;
-        margin-top: 0;
-        font-weight: 800;
+        font-size: 44px;
+        line-height: 1.05;
+        margin-bottom: 25px;
+        margin-top: 5px;
+        font-weight: 700;
         font-style: italic;
         color: #000;
+        font-family: Georgia, 'Times New Roman', serif;
     }
 
     .hero-text {
@@ -2056,8 +2064,8 @@ input, textarea, select {
     }
 
     .btn.btn-primary {
-        padding: 14px 50px;
-        font-size: 13px;
+        padding: 15px 55px;
+        font-size: 14px;
         font-weight: 600;
         background-color: var(--primary-yellow);
         color: #000;
@@ -2602,19 +2610,19 @@ input, textarea, select {
     }
 
     .hero-subtitle {
-        font-size: 10px;
+        font-size: 11px;
         letter-spacing: 4px;
     }
 
     .hero-subtitle::before,
     .hero-subtitle::after {
-        width: 35px;
+        width: 40px;
     }
 
     .hero-title {
-        font-size: 32px;
-        line-height: 1.1;
-        margin-bottom: 18px;
+        font-size: 36px;
+        line-height: 1.05;
+        margin-bottom: 20px;
     }
 
     .hero-text {
@@ -2622,8 +2630,8 @@ input, textarea, select {
     }
 
     .btn.btn-primary {
-        padding: 12px 40px;
-        font-size: 12px;
+        padding: 14px 45px;
+        font-size: 13px;
     }
 
     /* =====================================================
