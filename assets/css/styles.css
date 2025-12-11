@@ -1996,53 +1996,57 @@ input, textarea, select {
     }
 
     /* =====================================================
-       MOBILE HERO - Full Screen Like Reference
+       MOBILE HERO - ECOMSHIFT Style
        ===================================================== */
     .hero {
-        height: 100vh;
-        min-height: 600px;
+        height: 85vh;
+        max-height: 700px;
+        min-height: 500px;
         padding: 0;
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        padding-bottom: 80px;
+        padding-bottom: 40px;
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center top;
     }
 
     .hero-content {
-        padding: 0 20px;
+        padding: 0 25px;
         text-align: center;
         width: 100%;
     }
 
     .hero-subtitle {
-        font-size: 10px;
-        letter-spacing: 5px;
-        margin-bottom: 5px;
+        font-size: 9px;
+        letter-spacing: 4px;
+        margin-bottom: 0;
         text-transform: uppercase;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        color: #444;
+        gap: 12px;
+        color: #555;
         white-space: nowrap;
-        font-weight: 500;
+        font-weight: 400;
     }
 
     .hero-subtitle::before,
     .hero-subtitle::after {
         content: '';
         height: 1px;
-        width: 40px;
-        background-color: #333;
+        width: 35px;
+        background-color: #555;
         flex-shrink: 0;
     }
 
     .hero-title {
-        font-size: 32px;
-        line-height: 1.1;
-        margin-bottom: 20px;
-        margin-top: 8px;
-        font-weight: 800;
+        font-size: 28px;
+        line-height: 1.15;
+        margin-bottom: 18px;
+        margin-top: 6px;
+        font-weight: 700;
         font-style: italic;
         color: #000;
     }
@@ -2052,12 +2056,14 @@ input, textarea, select {
     }
 
     .btn.btn-primary {
-        padding: 14px 45px;
-        font-size: 12px;
-        font-weight: 700;
+        padding: 12px 40px;
+        font-size: 11px;
+        font-weight: 600;
         background-color: var(--primary-yellow);
         color: #000;
-        border-radius: 30px;
+        border-radius: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     /* =====================================================
@@ -2589,30 +2595,35 @@ input, textarea, select {
        EXTRA SMALL MOBILE - Hero
        ===================================================== */
     .hero {
-        height: 100vh;
-        min-height: 550px;
-        padding-bottom: 50px;
+        height: 80vh;
+        max-height: 600px;
+        min-height: 450px;
+        padding-bottom: 35px;
     }
 
     .hero-subtitle {
-        font-size: 11px;
+        font-size: 8px;
         letter-spacing: 3px;
-        margin-bottom: 8px;
+    }
+
+    .hero-subtitle::before,
+    .hero-subtitle::after {
+        width: 25px;
     }
 
     .hero-title {
-        font-size: 28px;
+        font-size: 24px;
         line-height: 1.15;
-        margin-bottom: 18px;
+        margin-bottom: 15px;
     }
 
     .hero-text {
         display: none;
     }
 
-    .btn {
-        padding: 12px 35px;
-        font-size: 11px;
+    .btn.btn-primary {
+        padding: 11px 35px;
+        font-size: 10px;
     }
 
     /* =====================================================
