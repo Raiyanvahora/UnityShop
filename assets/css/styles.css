@@ -496,15 +496,7 @@ input, textarea, select {
 }
 
 .product-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 4px 10px;
-    font-size: 9px;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius: 4px;
-    z-index: 10;
+    display: none;
 }
 
 .badge-sale {
