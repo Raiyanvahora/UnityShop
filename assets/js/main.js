@@ -390,7 +390,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // New smooth animations
     initScrollIndicator();
-    initBackToTop();
     initLightbox();
     initRippleEffect();
     initTiltEffect();
@@ -1405,38 +1404,6 @@ function initScrollIndicator() {
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = (scrollTop / docHeight) * 100;
         indicator.style.width = scrollPercent + '%';
-    });
-}
-
-// =====================================================
-// BACK TO TOP BUTTON
-// =====================================================
-function initBackToTop() {
-    // Create back to top button
-    const backToTop = document.createElement('div');
-    backToTop.className = 'back-to-top';
-    backToTop.innerHTML = `
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    `;
-    document.body.appendChild(backToTop);
-
-    // Show/hide on scroll
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    });
-
-    // Scroll to top on click
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
     });
 }
 
