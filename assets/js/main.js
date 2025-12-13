@@ -120,7 +120,7 @@ const productsData = [
     },
     {
         id: 10,
-        name: "Whirlpool Single Door 200L VitaMagic Silver",
+        name: "Whirlpool 215 VITAMAGIC PRO ROY 3S Alpha Steel",
         category: "Fridges",
         badge: "sale",
         condition: "Company Second",
@@ -128,7 +128,7 @@ const productsData = [
         capacity: "200 Liters",
         rating: 5,
         image: "assets/images/prd images/IMG-20251212-WA0054.jpg",
-        description: "Whirlpool VitaMagic single door in silver. 10 year warranty with superior freshness technology."
+        description: "Whirlpool VitaMagic Pro 200L 3 Star Single Door Refrigerator with 6th Sense IntelliSense Technology, Auto-Defrost & 10 Year Compressor Warranty."
     },
     {
         id: 11,
@@ -435,7 +435,7 @@ const productsData = [
     // ACs
     {
         id: 36,
-        name: "Panasonic Split AC 1.5 Ton",
+        name: "Panasonic CS/CU-SU18ZKYWT 1.5 Ton 3 Star Split AC",
         category: "ACs",
         badge: "sale",
         condition: "Company Second",
@@ -443,7 +443,7 @@ const productsData = [
         capacity: "1.5 Ton",
         rating: 5,
         image: "assets/images/prd images/IMG-20251212-WA0056.jpg",
-        description: "Panasonic inverter split AC with fast cooling. Energy efficient with warranty."
+        description: "Panasonic 1.5 Ton 3 Star Wi-Fi Inverter Split AC with 7in1 Convertible, True AI Mode, Crystal Clean & 5 Year Comprehensive Warranty."
     },
     // Ovens (keeping placeholder images)
     {
