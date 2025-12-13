@@ -9,173 +9,474 @@
 // PRODUCT DATA (Mock Database)
 // =====================================================
 const productsData = [
-    // Fridges
+    // Fridges - Single Door
     {
         id: 1,
-        name: "Double Door Refrigerator 260L",
+        name: "Whirlpool Single Door 190L Glass Finish",
         category: "Fridges",
-        oldPrice: 28000,
-        price: 18500,
         badge: "sale",
         condition: "Company Second",
-        brand: "Unity Brand",
-        capacity: "260 Liters",
+        brand: "Whirlpool",
+        capacity: "190 Liters",
         rating: 5,
-        image: "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=400&h=500&fit=crop",
-        description: "Energy efficient double door refrigerator with frost-free technology. Perfect for medium-sized families."
+        image: "assets/images/prd images/IMG-20251212-WA0011.jpg",
+        description: "Whirlpool single door refrigerator with elegant glass door finish. 10 year warranty on compressor."
     },
     {
         id: 2,
-        name: "Single Door Refrigerator 180L",
+        name: "LG Single Door 190L Blue Floral",
         category: "Fridges",
-        oldPrice: 18000,
-        price: 12500,
-        badge: "used",
+        badge: "sale",
         condition: "Damaged Box",
-        brand: "Unity Brand",
-        capacity: "180 Liters",
-        rating: 4,
-        image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&h=500&fit=crop",
-        description: "Compact single door refrigerator ideal for small families or bachelor accommodations."
+        brand: "LG",
+        capacity: "190 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0020.jpg",
+        description: "LG single door refrigerator with beautiful blue floral design. Smart Inverter Compressor with 10 year warranty."
     },
     {
         id: 3,
-        name: "Side by Side Refrigerator 550L",
+        name: "Whirlpool Single Door 200L Blue Floral",
         category: "Fridges",
-        oldPrice: 65000,
-        price: 42000,
         badge: "sale",
         condition: "Company Second",
-        brand: "Unity Premium",
-        capacity: "550 Liters",
+        brand: "Whirlpool",
+        capacity: "200 Liters",
         rating: 5,
-        image: "https://images.unsplash.com/photo-1536353284924-9220c464e262?w=400&h=500&fit=crop",
-        description: "Premium side by side refrigerator with water dispenser and ice maker."
+        image: "assets/images/prd images/IMG-20251212-WA0050.jpg",
+        description: "Whirlpool single door with vibrant blue floral design. 5 Star energy rating."
     },
-    // ACs
     {
         id: 4,
-        name: "Split AC 1.5 Ton 3 Star",
-        category: "ACs",
-        oldPrice: 35000,
-        price: 22500,
+        name: "Whirlpool Single Door 215L Blue Hibiscus",
+        category: "Fridges",
         badge: "sale",
         condition: "Company Second",
-        brand: "Unity Cool",
-        capacity: "1.5 Ton",
+        brand: "Whirlpool",
+        capacity: "215 Liters",
         rating: 5,
-        image: "https://images.unsplash.com/photo-1631545806609-44dc2e823cf7?w=400&h=500&fit=crop",
-        description: "Energy efficient split AC with fast cooling technology. Suitable for rooms up to 180 sq ft."
+        image: "assets/images/prd images/IMG-20251212-WA0051.jpg",
+        description: "Whirlpool single door with stunning blue hibiscus floral design. 10 year warranty."
     },
     {
         id: 5,
-        name: "Window AC 1 Ton",
-        category: "ACs",
-        oldPrice: 22000,
-        price: 14500,
-        badge: "used",
-        condition: "Damaged Box",
-        brand: "Unity Cool",
-        capacity: "1 Ton",
-        rating: 4,
-        image: "https://images.unsplash.com/photo-1625961332071-f1673bcbcda4?w=400&h=500&fit=crop",
-        description: "Compact window AC perfect for small rooms. Easy installation and maintenance."
+        name: "LG Single Door 190L Red Rose",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "LG",
+        capacity: "190 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0055.jpg",
+        description: "LG single door refrigerator with beautiful red rose design. Smart Inverter Compressor."
     },
     {
         id: 6,
-        name: "Inverter Split AC 2 Ton 5 Star",
-        category: "ACs",
-        oldPrice: 55000,
-        price: 38000,
+        name: "Haier Single Door 195L Silver",
+        category: "Fridges",
         badge: "sale",
-        condition: "Company Second",
-        brand: "Unity Premium",
-        capacity: "2 Ton",
-        rating: 5,
-        image: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=400&h=500&fit=crop",
-        description: "Premium inverter AC with 5 star rating. Ultra energy efficient with silent operation."
+        condition: "Damaged Box",
+        brand: "Haier",
+        capacity: "195 Liters",
+        rating: 4,
+        image: "assets/images/prd images/IMG-20251212-WA0016.jpg",
+        description: "Haier single door refrigerator in elegant silver finish. Direct Cool technology."
     },
-    // Washing Machines
     {
         id: 7,
-        name: "Front Load Washing Machine 7kg",
-        category: "Washing Machines",
-        oldPrice: 32000,
-        price: 21500,
+        name: "Whirlpool Single Door 215L Floral",
+        category: "Fridges",
         badge: "sale",
         condition: "Company Second",
-        brand: "Unity Wash",
-        capacity: "7 kg",
+        brand: "Whirlpool",
+        capacity: "215 Liters",
         rating: 5,
-        image: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&h=500&fit=crop",
-        description: "Fully automatic front load washing machine with multiple wash programs."
+        image: "assets/images/prd images/IMG-20251212-WA0018.jpg",
+        description: "Whirlpool single door with blue floral design. VitaMagic Pro technology for freshness."
     },
     {
         id: 8,
-        name: "Top Load Washing Machine 6.5kg",
-        category: "Washing Machines",
-        oldPrice: 18000,
-        price: 11500,
-        badge: "used",
-        condition: "Damaged Box",
-        brand: "Unity Wash",
-        capacity: "6.5 kg",
-        rating: 4,
-        image: "https://images.unsplash.com/photo-1610557892470-55d9e80c0571?w=400&h=500&fit=crop",
-        description: "Semi-automatic top load washing machine. Budget friendly option for daily use."
+        name: "Samsung Single Door 192L Pink Floral",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Samsung",
+        capacity: "192 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0052.jpg",
+        description: "Samsung single door with beautiful pink floral design. 20 year warranty on Digital Inverter Compressor."
     },
     {
         id: 9,
-        name: "Fully Automatic Top Load 8kg",
-        category: "Washing Machines",
-        oldPrice: 28000,
-        price: 19500,
+        name: "Samsung Single Door 192L Blue Floral",
+        category: "Fridges",
         badge: "sale",
         condition: "Company Second",
-        brand: "Unity Premium",
-        capacity: "8 kg",
+        brand: "Samsung",
+        capacity: "192 Liters",
         rating: 5,
-        image: "https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=400&h=500&fit=crop",
-        description: "Large capacity fully automatic washing machine with digital display and multiple programs."
+        image: "assets/images/prd images/IMG-20251212-WA0053.jpg",
+        description: "Samsung single door with stunning blue floral pattern. Digital Inverter Technology with 20 year warranty."
     },
-    // Ovens
     {
         id: 10,
-        name: "Microwave Oven 20L",
-        category: "Ovens",
-        oldPrice: 8000,
-        price: 5500,
+        name: "Whirlpool Single Door 200L VitaMagic Silver",
+        category: "Fridges",
         badge: "sale",
         condition: "Company Second",
-        brand: "Unity Kitchen",
+        brand: "Whirlpool",
+        capacity: "200 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0054.jpg",
+        description: "Whirlpool VitaMagic single door in silver. 10 year warranty with superior freshness technology."
+    },
+    {
+        id: 11,
+        name: "Whirlpool Single Door 215L Gold Floral",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Whirlpool",
+        capacity: "215 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0039.jpg",
+        description: "Whirlpool single door with elegant gold floral glass door design. 10 year warranty."
+    },
+    {
+        id: 12,
+        name: "LG Single Door 190L Dark Floral",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "LG",
+        capacity: "190 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0022.jpg",
+        description: "LG single door with elegant dark floral design. Smart Inverter Compressor."
+    },
+    // Fridges - Double Door
+    {
+        id: 13,
+        name: "Whirlpool Double Door 265L Steel",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Whirlpool",
+        capacity: "265 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0015.jpg",
+        description: "Whirlpool double door refrigerator in steel finish. 6th Sense technology with 10 year warranty."
+    },
+    {
+        id: 14,
+        name: "Whirlpool Double Door 292L IntelliFresh",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Whirlpool",
+        capacity: "292 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0014.jpg",
+        description: "Whirlpool IntelliFresh double door with Adaptive Intelligence. 25 years reliability."
+    },
+    {
+        id: 15,
+        name: "Whirlpool Double Door 265L Steel Pro",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Whirlpool",
+        capacity: "265 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0043.jpg",
+        description: "Whirlpool double door pro series in premium steel finish. 10 year warranty."
+    },
+    {
+        id: 16,
+        name: "Whirlpool Double Door 340L IntelliFresh Pro",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Whirlpool",
+        capacity: "340 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0044.jpg",
+        description: "Whirlpool IntelliFresh Pro double door with 6th Sense ActiveFresh. Large capacity."
+    },
+    {
+        id: 17,
+        name: "Whirlpool Double Door 265L NeoFresh",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Whirlpool",
+        capacity: "265 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0038.jpg",
+        description: "Whirlpool NeoFresh double door with advanced freshness technology. Steel finish."
+    },
+    {
+        id: 18,
+        name: "Whirlpool Double Door 245L Steel",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Whirlpool",
+        capacity: "245 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0041.jpg",
+        description: "Whirlpool double door in elegant steel finish. 6th Sense technology."
+    },
+    {
+        id: 19,
+        name: "Samsung Double Door 253L Steel",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Samsung",
+        capacity: "253 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0035.jpg",
+        description: "Samsung double door with Digital Inverter. 20 year warranty on compressor."
+    },
+    {
+        id: 20,
+        name: "Samsung Double Door 236L Convertible",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Samsung",
+        capacity: "236 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0040.jpg",
+        description: "Samsung convertible freezer double door. 5-in-1 Convertible modes for flexibility."
+    },
+    {
+        id: 21,
+        name: "Samsung Double Door 253L Interior View",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Samsung",
+        capacity: "253 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0033.jpg",
+        description: "Samsung double door with 2X BigBox storage. Spacious interior with multiple shelves."
+    },
+    {
+        id: 22,
+        name: "Samsung Double Door 236L Steel",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Samsung",
+        capacity: "236 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0046.jpg",
+        description: "Samsung double door with 20 year compressor warranty. Digital Inverter technology."
+    },
+    {
+        id: 23,
+        name: "Haier Double Door 258L Bottom Freezer",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Haier",
+        capacity: "258 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0034.jpg",
+        description: "Haier bottom mount freezer refrigerator. Triple Inverter technology."
+    },
+    {
+        id: 24,
+        name: "Haier Double Door 276L Bottom Freezer Black",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Haier",
+        capacity: "276 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0036.jpg",
+        description: "Haier bottom freezer in black glass finish. MagicConvertible technology."
+    },
+    {
+        id: 25,
+        name: "Haier Double Door 256L Glass Door",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Haier",
+        capacity: "256 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0047.jpg",
+        description: "Haier double door with premium glass finish. Global No.1 brand."
+    },
+    {
+        id: 26,
+        name: "Haier Double Door 276L MagicConvertible",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Haier",
+        capacity: "276 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0048.jpg",
+        description: "Haier MagicConvertible double door. Triple Inverter with 10 year warranty."
+    },
+    {
+        id: 27,
+        name: "Haier Double Door 258L Steel",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Haier",
+        capacity: "258 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0042.jpg",
+        description: "Haier double door in brushed steel finish. Energy efficient inverter technology."
+    },
+    {
+        id: 28,
+        name: "Haier Double Door 320L MagicConvertible Grey",
+        category: "Fridges",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Haier",
+        capacity: "320 Liters",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0049.jpg",
+        description: "Haier large capacity double door in grey. MagicConvertible with digital display."
+    },
+    // Washing Machines
+    {
+        id: 29,
+        name: "IFB Front Load 8kg Senator",
+        category: "Washing Machines",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "IFB",
+        capacity: "8 kg",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0023.jpg",
+        description: "IFB Senator front load washing machine with Power Steam. 4 year comprehensive warranty."
+    },
+    {
+        id: 30,
+        name: "IFB Front Load 6.5kg Elena",
+        category: "Washing Machines",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "IFB",
+        capacity: "6.5 kg",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0024.jpg",
+        description: "IFB Elena front load with Aqua Energie and Swirl Wash. DeepClean powered by AI."
+    },
+    {
+        id: 31,
+        name: "LG Front Load 7kg Direct Drive",
+        category: "Washing Machines",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "LG",
+        capacity: "7 kg",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0025.jpg",
+        description: "LG front load with Inverter Direct Drive. 6 Motion DD technology for better wash."
+    },
+    {
+        id: 32,
+        name: "IFB Front Load 6kg Diva Plus",
+        category: "Washing Machines",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "IFB",
+        capacity: "6 kg",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0026.jpg",
+        description: "IFB Diva Plus front load with Aqua Energie. 4 year comprehensive warranty."
+    },
+    {
+        id: 33,
+        name: "Bush Semi-Automatic 8kg",
+        category: "Washing Machines",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Bush",
+        capacity: "8 kg",
+        rating: 4,
+        image: "assets/images/prd images/IMG-20251212-WA0017.jpg",
+        description: "Bush semi-automatic washing machine with Strong Wash feature. Budget friendly option."
+    },
+    {
+        id: 34,
+        name: "AKAI Semi-Automatic 7.5kg",
+        category: "Washing Machines",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "AKAI",
+        capacity: "7.5 kg",
+        rating: 4,
+        image: "assets/images/prd images/IMG-20251212-WA0019.jpg",
+        description: "AKAI semi-automatic twin tub washing machine. Perfect for daily laundry needs."
+    },
+    {
+        id: 35,
+        name: "LG Top Load 8kg ThinQ",
+        category: "Washing Machines",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "LG",
+        capacity: "8 kg",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0037.jpg",
+        description: "LG fully automatic top load with ThinQ Wi-Fi. Smart Diagnosis feature."
+    },
+    // ACs
+    {
+        id: 36,
+        name: "Panasonic Split AC 1.5 Ton",
+        category: "ACs",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Panasonic",
+        capacity: "1.5 Ton",
+        rating: 5,
+        image: "assets/images/prd images/IMG-20251212-WA0056.jpg",
+        description: "Panasonic inverter split AC with fast cooling. Energy efficient with warranty."
+    },
+    // Ovens (keeping placeholder images)
+    {
+        id: 37,
+        name: "Microwave Oven 20L",
+        category: "Ovens",
+        badge: "sale",
+        condition: "Company Second",
+        brand: "Samsung",
         capacity: "20 Liters",
         rating: 4,
         image: "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400&h=500&fit=crop",
         description: "Solo microwave oven perfect for reheating and basic cooking needs."
     },
     {
-        id: 11,
+        id: 38,
         name: "Convection Microwave 28L",
         category: "Ovens",
-        oldPrice: 15000,
-        price: 9500,
         badge: "used",
         condition: "Damaged Box",
-        brand: "Unity Kitchen",
+        brand: "LG",
         capacity: "28 Liters",
         rating: 4,
         image: "https://images.unsplash.com/photo-1585659722983-3a675dabf23d?w=400&h=500&fit=crop",
         description: "Convection microwave with grill function. Ideal for baking and grilling."
     },
     {
-        id: 12,
+        id: 39,
         name: "OTG Oven 30L",
         category: "Ovens",
-        oldPrice: 12000,
-        price: 7500,
         badge: "sale",
         condition: "Company Second",
-        brand: "Unity Premium",
+        brand: "Bajaj",
         capacity: "30 Liters",
         rating: 5,
         image: "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=400&h=500&fit=crop",
@@ -183,25 +484,21 @@ const productsData = [
     },
     // Spare Parts
     {
-        id: 13,
+        id: 40,
         name: "Fridge Compressor Universal",
         category: "Spare Parts",
-        oldPrice: 4500,
-        price: 3200,
         badge: "new",
         condition: "New",
-        brand: "Unity Parts",
+        brand: "Universal",
         capacity: "Universal",
         rating: 5,
         image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=500&fit=crop",
         description: "High quality universal compressor compatible with most refrigerator brands."
     },
     {
-        id: 14,
+        id: 41,
         name: "AC Gas Refill Service",
         category: "Spare Parts",
-        oldPrice: 2500,
-        price: 1800,
         badge: "sale",
         condition: "Service",
         brand: "Unity Service",
@@ -211,32 +508,16 @@ const productsData = [
         description: "Professional AC gas refill service with leak testing and performance check."
     },
     {
-        id: 15,
+        id: 42,
         name: "Washing Machine Motor",
         category: "Spare Parts",
-        oldPrice: 3500,
-        price: 2500,
         badge: "new",
         condition: "New",
-        brand: "Unity Parts",
+        brand: "Universal",
         capacity: "Universal",
         rating: 4,
         image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=500&fit=crop",
         description: "Replacement motor for semi-automatic washing machines. Easy installation."
-    },
-    {
-        id: 16,
-        name: "Microwave Magnetron",
-        category: "Spare Parts",
-        oldPrice: 2800,
-        price: 1950,
-        badge: "new",
-        condition: "New",
-        brand: "Unity Parts",
-        capacity: "Universal",
-        rating: 4,
-        image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=400&h=500&fit=crop",
-        description: "Replacement magnetron for microwave ovens. Professional installation recommended."
     }
 ];
 
@@ -394,6 +675,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initRippleEffect();
     initTiltEffect();
     initLazyLoad();
+
+    // Condition Explainer Popup
+    initConditionExplainer();
 });
 
 // =====================================================
@@ -669,6 +953,9 @@ function createProductCard(product) {
                 </svg>
             </div>`;
 
+    const whatsappMessage = encodeURIComponent(`Hi, I'm interested in ${product.name} (${product.condition}). Is it available?`);
+    const whatsappLink = `https://wa.me/919979541418?text=${whatsappMessage}`;
+
     return `
         <div class="product-card" data-product-id="${product.id}" data-product-url="product.html?id=${product.id}">
             <span class="product-badge ${badgeClass}">${badgeText}</span>
@@ -679,10 +966,16 @@ function createProductCard(product) {
                 <p class="product-category">${product.category}</p>
                 <h3 class="product-title">${product.name}</h3>
                 <div class="product-price">
-                    <span class="price-old">Rs ${product.oldPrice.toLocaleString()}</span>
-                    <span class="price-current">Rs ${product.price.toLocaleString()}</span>
+                    <span class="price-discount">45% off on MRP</span>
                 </div>
-                <button class="btn-add-cart" data-product-id="${product.id}">Add to Cart</button>
+                <div class="product-buttons">
+                    <a href="${whatsappLink}" class="btn-whatsapp-inquiry" target="_blank" rel="noopener" onclick="event.stopPropagation();">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Inquire Now
+                    </a>
+                </div>
             </div>
         </div>
     `;
@@ -787,10 +1080,10 @@ function initProductPage() {
     if (breadcrumb) breadcrumb.textContent = product.name;
 
     const oldPrice = document.getElementById('productOldPrice');
-    if (oldPrice) oldPrice.textContent = `Rs ${product.oldPrice.toLocaleString()}`;
+    if (oldPrice) oldPrice.textContent = '';
 
     const currentPrice = document.getElementById('productCurrentPrice');
-    if (currentPrice) currentPrice.textContent = `Rs ${product.price.toLocaleString()}`;
+    if (currentPrice) currentPrice.textContent = '45% off on MRP';
 
     const brand = document.getElementById('productBrand');
     if (brand) brand.textContent = product.brand;
@@ -813,18 +1106,11 @@ function initProductPage() {
         badge.className = `product-badge badge-${product.badge}`;
     }
 
-    // Product image placeholder
+    // Product image
     const mainImage = document.getElementById('productMainImage');
     if (mainImage) {
         mainImage.innerHTML = `
-            <div class="product-image-placeholder">
-                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                    <polyline points="21 15 16 10 5 21"></polyline>
-                </svg>
-                <span>${product.category}</span>
-            </div>
+            <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'product-image-placeholder\\'><svg width=\\'100\\' height=\\'100\\' viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'1\\'><rect x=\\'3\\' y=\\'3\\' width=\\'18\\' height=\\'18\\' rx=\\'2\\' ry=\\'2\\'></rect><circle cx=\\'8.5\\' cy=\\'8.5\\' r=\\'1.5\\'></circle><polyline points=\\'21 15 16 10 5 21\\'></polyline></svg><span>${product.category}</span></div>';">
         `;
     }
 
@@ -1595,6 +1881,65 @@ function initLazyLoad() {
     });
 
     images.forEach(img => imageObserver.observe(img));
+}
+
+// =====================================================
+// PRODUCT CONDITION EXPLAINER POPUP
+// =====================================================
+function initConditionExplainer() {
+    const banner = document.getElementById('conditionBanner');
+    const popup = document.getElementById('conditionPopupOverlay');
+    const openBtn = document.getElementById('openConditionPopup');
+    const closeBannerBtn = document.getElementById('closeConditionBanner');
+    const closePopupBtn = document.getElementById('closeConditionPopup');
+
+    if (!banner || !popup) return;
+
+    // Check if user has already dismissed the banner
+    const bannerDismissed = localStorage.getItem('conditionBannerDismissed');
+    if (bannerDismissed) {
+        banner.classList.add('hidden');
+    }
+
+    // Open popup when clicking "Learn More"
+    if (openBtn) {
+        openBtn.addEventListener('click', () => {
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    // Close banner
+    if (closeBannerBtn) {
+        closeBannerBtn.addEventListener('click', () => {
+            banner.classList.add('hidden');
+            localStorage.setItem('conditionBannerDismissed', 'true');
+        });
+    }
+
+    // Close popup
+    if (closePopupBtn) {
+        closePopupBtn.addEventListener('click', () => {
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Close popup when clicking overlay
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close popup with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('active')) {
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }
 
 // =====================================================
