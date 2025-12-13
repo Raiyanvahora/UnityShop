@@ -19,6 +19,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "190 Liters",
         rating: 5,
+        price: 12999,
+        originalPrice: 18990,
         image: "assets/images/prd images/IMG-20251212-WA0011.jpg",
         description: "Whirlpool single door refrigerator with elegant glass door finish. 10 year warranty on compressor."
     },
@@ -31,6 +33,8 @@ const productsData = [
         brand: "LG",
         capacity: "190 Liters",
         rating: 5,
+        price: 11499,
+        originalPrice: 17490,
         image: "assets/images/prd images/IMG-20251212-WA0020.jpg",
         description: "LG single door refrigerator with beautiful blue floral design. Smart Inverter Compressor with 10 year warranty."
     },
@@ -43,6 +47,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "200 Liters",
         rating: 5,
+        price: 13499,
+        originalPrice: 19990,
         image: "assets/images/prd images/IMG-20251212-WA0050.jpg",
         description: "Whirlpool single door with vibrant blue floral design. 5 Star energy rating."
     },
@@ -55,6 +61,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "215 Liters",
         rating: 5,
+        price: 14999,
+        originalPrice: 21990,
         image: "assets/images/prd images/IMG-20251212-WA0051.jpg",
         description: "Whirlpool single door with stunning blue hibiscus floral design. 10 year warranty."
     },
@@ -67,6 +75,8 @@ const productsData = [
         brand: "LG",
         capacity: "190 Liters",
         rating: 5,
+        price: 12499,
+        originalPrice: 18490,
         image: "assets/images/prd images/IMG-20251212-WA0055.jpg",
         description: "LG single door refrigerator with beautiful red rose design. Smart Inverter Compressor."
     },
@@ -79,6 +89,8 @@ const productsData = [
         brand: "Haier",
         capacity: "195 Liters",
         rating: 4,
+        price: 10999,
+        originalPrice: 15990,
         image: "assets/images/prd images/IMG-20251212-WA0016.jpg",
         description: "Haier single door refrigerator in elegant silver finish. Direct Cool technology."
     },
@@ -91,6 +103,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "215 Liters",
         rating: 5,
+        price: 14499,
+        originalPrice: 20990,
         image: "assets/images/prd images/IMG-20251212-WA0018.jpg",
         description: "Whirlpool single door with blue floral design. VitaMagic Pro technology for freshness."
     },
@@ -103,6 +117,8 @@ const productsData = [
         brand: "Samsung",
         capacity: "192 Liters",
         rating: 5,
+        price: 13999,
+        originalPrice: 19990,
         image: "assets/images/prd images/IMG-20251212-WA0052.jpg",
         description: "Samsung single door with beautiful pink floral design. 20 year warranty on Digital Inverter Compressor."
     },
@@ -115,6 +131,8 @@ const productsData = [
         brand: "Samsung",
         capacity: "192 Liters",
         rating: 5,
+        price: 13999,
+        originalPrice: 19990,
         image: "assets/images/prd images/IMG-20251212-WA0053.jpg",
         description: "Samsung single door with stunning blue floral pattern. Digital Inverter Technology with 20 year warranty."
     },
@@ -127,6 +145,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "200 Liters",
         rating: 5,
+        price: 15999,
+        originalPrice: 23990,
         image: "assets/images/prd images/IMG-20251212-WA0054.jpg",
         description: "Whirlpool VitaMagic Pro 200L 3 Star Single Door Refrigerator with 6th Sense IntelliSense Technology, Auto-Defrost & 10 Year Compressor Warranty."
     },
@@ -139,6 +159,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "215 Liters",
         rating: 5,
+        price: 14999,
+        originalPrice: 21990,
         image: "assets/images/prd images/IMG-20251212-WA0039.jpg",
         description: "Whirlpool single door with elegant gold floral glass door design. 10 year warranty."
     },
@@ -151,6 +173,8 @@ const productsData = [
         brand: "LG",
         capacity: "190 Liters",
         rating: 5,
+        price: 12999,
+        originalPrice: 18490,
         image: "assets/images/prd images/IMG-20251212-WA0022.jpg",
         description: "LG single door with elegant dark floral design. Smart Inverter Compressor."
     },
@@ -164,6 +188,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "265 Liters",
         rating: 5,
+        price: 22999,
+        originalPrice: 32990,
         image: "assets/images/prd images/IMG-20251212-WA0015.jpg",
         description: "Whirlpool double door refrigerator in steel finish. 6th Sense technology with 10 year warranty."
     },
@@ -176,6 +202,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "292 Liters",
         rating: 5,
+        price: 25999,
+        originalPrice: 37990,
         image: "assets/images/prd images/IMG-20251212-WA0014.jpg",
         description: "Whirlpool IntelliFresh double door with Adaptive Intelligence. 25 years reliability."
     },
@@ -188,6 +216,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "265 Liters",
         rating: 5,
+        price: 23999,
+        originalPrice: 34990,
         image: "assets/images/prd images/IMG-20251212-WA0043.jpg",
         description: "Whirlpool double door pro series in premium steel finish. 10 year warranty."
     },
@@ -200,6 +230,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "340 Liters",
         rating: 5,
+        price: 29999,
+        originalPrice: 42990,
         image: "assets/images/prd images/IMG-20251212-WA0044.jpg",
         description: "Whirlpool IntelliFresh Pro double door with 6th Sense ActiveFresh. Large capacity."
     },
@@ -212,6 +244,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "265 Liters",
         rating: 5,
+        price: 22499,
+        originalPrice: 31990,
         image: "assets/images/prd images/IMG-20251212-WA0038.jpg",
         description: "Whirlpool NeoFresh double door with advanced freshness technology. Steel finish."
     },
@@ -224,6 +258,8 @@ const productsData = [
         brand: "Whirlpool",
         capacity: "245 Liters",
         rating: 5,
+        price: 20999,
+        originalPrice: 29990,
         image: "assets/images/prd images/IMG-20251212-WA0041.jpg",
         description: "Whirlpool double door in elegant steel finish. 6th Sense technology."
     },
@@ -236,6 +272,8 @@ const productsData = [
         brand: "Samsung",
         capacity: "253 Liters",
         rating: 5,
+        price: 24999,
+        originalPrice: 35990,
         image: "assets/images/prd images/IMG-20251212-WA0035.jpg",
         description: "Samsung double door with Digital Inverter. 20 year warranty on compressor."
     },
@@ -248,6 +286,8 @@ const productsData = [
         brand: "Samsung",
         capacity: "236 Liters",
         rating: 5,
+        price: 23499,
+        originalPrice: 33990,
         image: "assets/images/prd images/IMG-20251212-WA0040.jpg",
         description: "Samsung convertible freezer double door. 5-in-1 Convertible modes for flexibility."
     },
@@ -260,6 +300,8 @@ const productsData = [
         brand: "Samsung",
         capacity: "253 Liters",
         rating: 5,
+        price: 24499,
+        originalPrice: 34990,
         image: "assets/images/prd images/IMG-20251212-WA0033.jpg",
         description: "Samsung double door with 2X BigBox storage. Spacious interior with multiple shelves."
     },
@@ -272,6 +314,8 @@ const productsData = [
         brand: "Samsung",
         capacity: "236 Liters",
         rating: 5,
+        price: 22999,
+        originalPrice: 32990,
         image: "assets/images/prd images/IMG-20251212-WA0046.jpg",
         description: "Samsung double door with 20 year compressor warranty. Digital Inverter technology."
     },
@@ -284,6 +328,8 @@ const productsData = [
         brand: "Haier",
         capacity: "258 Liters",
         rating: 5,
+        price: 21999,
+        originalPrice: 30990,
         image: "assets/images/prd images/IMG-20251212-WA0034.jpg",
         description: "Haier bottom mount freezer refrigerator. Triple Inverter technology."
     },
@@ -296,6 +342,8 @@ const productsData = [
         brand: "Haier",
         capacity: "276 Liters",
         rating: 5,
+        price: 24999,
+        originalPrice: 35990,
         image: "assets/images/prd images/IMG-20251212-WA0036.jpg",
         description: "Haier bottom freezer in black glass finish. MagicConvertible technology."
     },
@@ -308,6 +356,8 @@ const productsData = [
         brand: "Haier",
         capacity: "256 Liters",
         rating: 5,
+        price: 22999,
+        originalPrice: 32990,
         image: "assets/images/prd images/IMG-20251212-WA0047.jpg",
         description: "Haier double door with premium glass finish. Global No.1 brand."
     },
@@ -320,6 +370,8 @@ const productsData = [
         brand: "Haier",
         capacity: "276 Liters",
         rating: 5,
+        price: 25999,
+        originalPrice: 36990,
         image: "assets/images/prd images/IMG-20251212-WA0048.jpg",
         description: "Haier MagicConvertible double door. Triple Inverter with 10 year warranty."
     },
@@ -332,6 +384,8 @@ const productsData = [
         brand: "Haier",
         capacity: "258 Liters",
         rating: 5,
+        price: 21499,
+        originalPrice: 29990,
         image: "assets/images/prd images/IMG-20251212-WA0042.jpg",
         description: "Haier double door in brushed steel finish. Energy efficient inverter technology."
     },
@@ -344,6 +398,8 @@ const productsData = [
         brand: "Haier",
         capacity: "320 Liters",
         rating: 5,
+        price: 27999,
+        originalPrice: 39990,
         image: "assets/images/prd images/IMG-20251212-WA0049.jpg",
         description: "Haier large capacity double door in grey. MagicConvertible with digital display."
     },
@@ -2003,3 +2059,83 @@ if (globalSearchInput) {
         }
     });
 }
+
+// =====================================================
+// SCROLL TO TOP BUTTON
+// =====================================================
+function initScrollToTop() {
+    // Create scroll to top button
+    const scrollBtn = document.createElement('button');
+    scrollBtn.className = 'scroll-to-top';
+    scrollBtn.setAttribute('aria-label', 'Scroll to top');
+    scrollBtn.innerHTML = `
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    `;
+    document.body.appendChild(scrollBtn);
+
+    // Show/hide based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
+
+    // Scroll to top on click
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// =====================================================
+// SMOOTH IMAGE LOADING
+// =====================================================
+function initSmoothImageLoading() {
+    const images = document.querySelectorAll('.product-image img');
+
+    images.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+        }
+    });
+}
+
+// =====================================================
+// PAGE TRANSITION EFFECT
+// =====================================================
+function initPageTransition() {
+    document.body.classList.add('page-transition');
+}
+
+// Initialize new features when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    initScrollToTop();
+    initSmoothImageLoading();
+    initPageTransition();
+
+    // Re-init smooth image loading when products are dynamically loaded
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.addedNodes.length) {
+                initSmoothImageLoading();
+            }
+        });
+    });
+
+    const productGrids = document.querySelectorAll('.products-grid, #shopProductsGrid');
+    productGrids.forEach(grid => {
+        if (grid) {
+            observer.observe(grid, { childList: true, subtree: true });
+        }
+    });
+});
